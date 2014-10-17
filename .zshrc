@@ -1,5 +1,4 @@
 export LANG=ja_JP.UTF-8
-
 # java
 export JAVA_HOME=`/usr/libexec/java_home`
 # hadoop
@@ -8,15 +7,15 @@ export HADOOP_CONF_DIR=/usr/local/Cellar/hadoop/1.1.2/libexec/conf
 export PATH=$PATH:$HOME/lib/mahout-distribution-0.7/bin
 # mysql
 export PATH=$PATH:/usr/local/bin/mysql
+alias startms='/usr/local/bin/mysqld'
 alias mslogin='mysql -u root -p'
 # manpath
 export PATH=/opt/local/bin:/opt/local/sbin/:$PATH
 export MANPATH=/opt/local/man:$MANPATH
-# vim
-alias mvim='env LANG=ja_JP.UTF-8 /Applications/MacVim.app "$@"'
+export PKG_CONFIG_PATH=/usr/local/lib/pkgconfig
 
 source ~/.nvm/nvm.sh
-nvm use v0.10.0
+nvm use v0.10.24
 npm_dir=${NVM_PATH}_modules
 export NODE_PATH=$npm_dir
 
@@ -31,14 +30,13 @@ export LSCOLORS=gxfxxxxxcxxxxxxxxxgxgx
 export LS_COLORS='di=01;36:ln=01;35:ex=01;32'
 zstyle ':completion:*' list-colors 'di=36' 'ln=35' 'ex=32'
 
-
 autoload -Uz vcs_info
 zstyle ':vcs_info:*' formats ':(%s)%b'
 zstyle ':vcs_info:*' actionformats ':(%s)%b|%a'
 precmd () {
-    psvar=()
-    LANG=en_US.UTF-8 vcs_info
-    [[ -n "$vcs_info_msg_0_" ]] && psvar[1]="$vcs_info_msg_0_"
+  psvar=()
+  LANG=en_US.UTF-8 vcs_info
+  [[ -n "$vcs_info_msg_0_" ]] && psvar[1]="$vcs_info_msg_0_"
 }
 PROMPT="%{${fg[yellow]}%}[%n@%~%1(v|%F{green}%1v%f|)%{${fg[yellow]}%}]%{${reset_color}%}%b "
 
@@ -68,6 +66,7 @@ alias sp='spring'
 alias sps='spring rails s'
 alias spc='spring rails c'
 alias routing='subl config/routes.rb'
+alias union='bundle exec unicorn_rails -E production -c config/unicorn.rb'
 
 # pythonのエイリアス
 alias supy="sudo python"
@@ -79,25 +78,60 @@ alias use2="rvm use 2.0.0"
 
 # git関連のエイリアス設定
 alias gst='git status'
+alias gsts='git status --short'
 alias gch='git checkout'
 alias graph='git log --graph --date=short --decorate=short --pretty=format:'%Cgreen%h %Creset%cd %Cblue%cn %Cred%d %Creset%s''
 alias stt='git status -uno'
-alias difff='git diff --word-diff'
+alias difff='git diff --color-words'
 alias glog='git log --pretty=short --graph'
-alias gad='git add .'
+alias gad='git add . -A'
+alias oneglog='git log --pretty=short --graph --oneline'
 alias cam='git commit -a -m'
 alias gbr='git branch'
 alias gf='git fetch'
 alias gpom='git push origin master'
-alias delete-merged-branches='git branch --merged | grep -v '*' | xargs -I % git branch -d %'
+alias delete-merged-branches="git branch --merged | grep -v '*' | xargs -I % git branch -d %"
+alias gip='git push origin `git rev-parse --abbrev-ref HEAD`'
 
-#その他エイリアス
+# その他エイリアス
 alias de='cd Desktop'
 alias vzsh='vim ~/.zshrc'
 alias pos='pg_ctl -D /usr/local/var/postgres -l /usr/local/var/postgres/server.log start'
 alias postop='pg_ctl -D /usr/local/var/postgres/ -l /usr/local/var/postgres/server.log stop'
 alias sb='subl'
 alias catz='cat ~/.zshrc'
+alias nginxtail='tail -f /var/log/nginx/access.log'
+alias ll='ls -l'
+alias best='cd ~/Desktop/BEST10-iOS/;open Best10.xcworkspace'
+alias sakura='ssh timakin@153.121.70.114'
+
+# Access through ssh Setting
+alias nakajima='ssh takahashi@131.113.204.178 -p 8892'
+alias sendtonakajima='sftp -oPort=8892 takahashi@131.113.204.178'
+
+
+# zaw setting
+source ~/zsh_plugins/zaw/zaw.zsh
+bindkey '^[d' zaw-cdr
+bindkey '^[g' zaw-git-branches
+bindkey '^[@' zaw-gitdir
+
+function zaw-src-gitdir () {
+  _dir=$(git rev-parse --show-cdup 2>/dev/null)
+  if [ $? -eq 0 ]
+    then
+    candidates=( $(git ls-files ${_dir} | perl -MFile::Basename -nle \
+     '$a{dirname $_}++; END{delete $a{"."}; print for sort keys %a}') )
+  fi
+  actions=("zaw-src-gitdir-cd")
+  act_descriptions=("change directory in git repos")
+}
+
+function zaw-src-gitdir-cd () {
+  BUFFER="cd $1"
+  zle accept-line
+}
+zaw-register-src -n gitdir zaw-src-gitdir
 
 ### Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
