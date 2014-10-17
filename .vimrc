@@ -12,7 +12,6 @@ set shiftwidth=2
 set whichwrap=b,s,<,>,[,]
 set background=dark
 let g:solarized_termcolors = 256
-colorscheme molokai
 
 if has('vim_starting')
   filetype plugin off
@@ -20,7 +19,7 @@ if has('vim_starting')
   execute 'set runtimepath+=' . expand('~/.vim/bundle/neobundle.vim')
 endif
 
-call neobundle#rc(expand('~/.vim/bundle'))
+call neobundle#begin(expand('~/.vim/bundle'))
 NeoBundle 'mattn/benchvimrc-vim'
 NeoBundle 'git://github.com/kien/ctrlp.vim.git'
 NeoBundle 'git://github.com/Shougo/neobundle.vim.git'
@@ -75,14 +74,14 @@ NeoBundle 'eagletmt/unite-haddock'
 NeoBundle 'tsukkee/unite-tag'
 NeoBundle 'rhysd/unite-ruby-require.vim'
 NeoBundleLazy 'Shougo/unite.vim', {
-      \   'autoload' : {
+      \       'autoload' : {
       \       'commands' : [ "Unite", "UniteWithBufferDir", "UniteWithCurrentDir" ]
       \   }
       \}
-
 NeoBundle 'Shougo/neosnippet'
 NeoBundle 'Shougo/neosnippet-snippets'
 NeoBundle 'Rip-Rip/clang_complete'
+call neobundle#end()
 autocmd VimEnter * NERDTree  
 syntax enable
 syntax on

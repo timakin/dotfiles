@@ -1,10 +1,3 @@
-export LANG=ja_JP.UTF-8
-# java
-export JAVA_HOME=`/usr/libexec/java_home`
-# hadoop
-export HADOOP_CONF_DIR=/usr/local/Cellar/hadoop/1.1.2/libexec/conf
-# mahout
-export PATH=$PATH:$HOME/lib/mahout-distribution-0.7/bin
 # mysql
 export PATH=$PATH:/usr/local/bin/mysql
 alias startms='/usr/local/bin/mysqld'
@@ -13,11 +6,6 @@ alias mslogin='mysql -u root -p'
 export PATH=/opt/local/bin:/opt/local/sbin/:$PATH
 export MANPATH=/opt/local/man:$MANPATH
 export PKG_CONFIG_PATH=/usr/local/lib/pkgconfig
-
-source ~/.nvm/nvm.sh
-nvm use v0.10.24
-npm_dir=${NVM_PATH}_modules
-export NODE_PATH=$npm_dir
 
 # bundle open editor => Sublime Text
 function sublg { bundle show $@ | xargs subl; }
