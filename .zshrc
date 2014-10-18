@@ -92,6 +92,7 @@ alias nginxtail='tail -f /var/log/nginx/access.log'
 alias ll='ls -l'
 alias best='cd ~/Desktop/BEST10-iOS/;open Best10.xcworkspace'
 alias sakura='ssh timakin@153.121.70.114'
+alias shellreboot='exec ${SHELL} -l'
 
 # Access through ssh Setting
 alias nakajima='ssh takahashi@131.113.204.178 -p 8892'
