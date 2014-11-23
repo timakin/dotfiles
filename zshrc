@@ -98,7 +98,6 @@ alias shellreboot='exec ${SHELL} -l'
 alias nakajima='ssh takahashi@131.113.204.178 -p 8892'
 alias sendtonakajima='sftp -oPort=8892 takahashi@131.113.204.178'
 
-
 # zaw setting
 source ~/zsh_plugins/zaw/zaw.zsh
 bindkey '^[d' zaw-cdr
