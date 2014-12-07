@@ -1,0 +1,149 @@
+= knife-solo
+
+== DESCRIPTION:
+
+knife-solo adds a handful of commands that aim to make working with chef-solo as powerful as chef-server. It currently adds 5 subcommands to knife:
+
+- <tt>knife solo init</tt> is used to create a new directory structure (i.e. "kitchen") that fits with Chef's standard structure and can be used to build and store recipes.
+
+- <tt>knife solo prepare</tt> installs Chef on a given host. It's structured to auto-detect the target OS and change the installation process accordingly.
+
+- <tt>knife solo cook</tt> uploads the current kitchen (Chef repo) to the target host and runs chef-solo on that host.
+
+- <tt>knife solo bootstrap</tt> combines the two previous ones (prepare and cook). knife-solo also adds +--solo+ command line option and +knife[:solo]+ configuration parameter to <tt>knife bootstrap</tt> that can be used for triggering "knife solo bootstrap" instead of the normal template based chef-client bootstrap.
+
+- <tt>knife solo clean</tt> removes the uploaded kitchen from the target host.
+
+Preliminary Windows support for "knife solo cook" is available (see below).
+
+== USAGE:
+
+Installation is a normal gem installation.
+
+    gem install knife-solo
+
+If you need to install from git run:
+
+    bundle && bundle exec rake install
+
+== Integration with Berkshelf & Librarian
+
+knife-solo also integrates with {Berkshelf}[http://berkshelf.com/] and {Librarian-Chef}[https://github.com/applicationsonline/librarian-chef] for managing your cookbooks out of the box.
+
+We try to do this somewhat automatically by first checking if you have either of the two gems installed. If you have both, we will default to Berkshelf.
+
+During <tt>knife solo init</tt> we'll generate the appropriate configuration file for either gem. Then during <tt>knife solo cook</tt> we'll run the installation step for whichever configuration file is in your kitchen.
+
+Both commands accept option flags to disable this feature if needed (<tt>--no-berkshelf</tt> or <tt>--no-librarian</tt>). The init command also offers enable flags to generate configuration files regardless of whether or not you have the supporting gem installed.
+
+More detailed logic for this integration is available in the {Berkshelf & Librarian-Chef integration}[https://github.com/matschaffer/knife-solo/wiki/Berkshelf-&-Librarian-Chef-integration] wiki page.
+
+=== A note about the "cookbooks" directory
+
+One common "gotcha" is that you may have Berkshelf or Librarian-Chef installed without knowing it. This will generate a kitchen that is configured to use them which might not have been your intention. Once the configuration file is available, the <tt>cookbooks</tt> directory will be reserved for cookbooks that are resolved via one of those tools. Any cookbooks that you create there will be removed when you run <tt>knife solo cook</tt>.
+
+Please use <tt>site-cookbooks</tt> for custom cookbooks or (better yet) give them their own git repositories which are then included using Berkshelf or Librarian-Chef.
+
+== knife-solo commands
+
+=== Init command
+
+The init command simply takes a name of the directory to store the kitchen structure. Use "." to initialize the current directory.
+
+    knife solo init mychefrepo
+
+Currently the directory structure looks like this, but could change as development continues.
+
+    mychefrepo/
+    ├── .chef
+    │   └── knife.rb
+    ├── cookbooks
+    ├── data_bags
+    ├── nodes
+    ├── roles
+    └── site-cookbooks
+
+=== Prepare command
+
+The prepare command takes an ssh-style host argument as follows:
+
+    knife solo prepare ubuntu@10.0.0.201
+
+It will look up SSH information from <tt>~/.ssh/config</tt> or in the file specified by +-F+. You can also pass port information (+-p+), identity information (+-i+), or a password (+-P+). It will use sudo to run some of these commands and will prompt you for the password if it's not supplied on the command line.
+
+This command will make a best-effort to detect and install Chef Solo on your target operating system. We use the {Opscode Installer}[http://www.opscode.com/chef/install/] wherever possible.
+
+If you need specific behavior you can fallback to a knife bootstrap command with an empty runlist using the following:
+
+    knife bootstrap --template-file bootstrap.centos.erb -u root 172.16.144.132
+    echo '{"run_list":[]}' > nodes/172.16.144.132.json
+
+Bootstrap templates are quite simple, as shown in {this gist for bootstrap.centos.erb}[https://gist.github.com/2402433].
+
+Or if your modifications provide some general benefit, consider sending a pull request to {this project}[https://github.com/matschaffer/knife-solo] or {the omnibus installer}[https://github.com/opscode/omnibus].
+
+=== Cook command
+
+The cook command also takes an ssh-style host argument:
+
+    knife solo cook ubuntu@10.0.0.201
+
+The cook command uploads the current kitchen to the server and runs chef-solo on that server. If you only specify one argument it will look for a node config in <tt>nodes/<hostname>.json</tt>. Or if you want to specify a node config you can pass the path to the file as the second argument.
+
+This uploads all of your cookbooks in addition to a patch that allows you to use data_bags in a read-only fashion from the +data_bags+ folder.
+
+This also supports encrypted data bags. To use them, set the path to your key with +encrypted_data_bag_secret+ in .chef/knife.rb.
+
+The built-in knife commands for working with data bags don't work well without a Chef server so we recommend using the {knife-solo_data_bag}[https://github.com/thbishop/knife-solo_data_bag] gem. This will provide "solo" versions of all the typical data bag commands. The default kitchen structure generated by <tt>knife solo init</tt> should be compatible with all the operations listed in the documentation for that gem.
+
+=== Bootstrap command
+
+The bootstrap command takes the same arguments and most of the options as prepare and cook:
+
+    knife solo bootstrap ubuntu@10.0.0.201
+
+Under the hood it first calls +knife solo prepare+ and then +knife solo cook+ with the specified arguments and options.
+
+==== Integration with knife bootstrap
+
+knife-solo also integrates with <tt>knife bootstrap</tt> by adding +--solo+ command line option and +knife[:solo]+ configuration parameter to it. When requested, "knife solo bootrap" is used instead of the normal template based chef-client bootstrap. This is especially useful with other knife plugins like {knife-ec2}[https://github.com/opscode/knife-ec2] that invoke "knife bootstrap" after creating an server instance. Even if these plugins do not have the "--solo" option, you can put <tt>knife[:solo] = true</tt> in knife.rb.
+
+=== Clean command
+
+The clean command takes the same arguments like prepare and cook:
+
+    knife solo clean ubuntu@10.0.0.201
+
+The clean command removes an uploaded kitchen completely from the target host. This improves security because passwords etc. are not left behind on that host.
+
+=== Windows support
+
+The cook command will work on Windows node if you meet the following howto:
+
+==== Init as normally
+
+- run <tt>knife solo init</tt>
+
+==== Prepare the node manually
+
+- install a SSH server (eg: WinSSHd)
+- install rsync on the node (see https://github.com/thbar/rsync-windows)
+- add rsync to the user PATH
+- install http://www.opscode.com/chef/install.msi
+- add nodes/hostname.json and put <tt>{ "run_list": [] }</tt> in it
+
+==== Cook
+
+- cook should work as expected automatically, if you use cygwin rsync
+
+== DEVELOPMENT
+
+Get set up by running +./script/newb+ this will do some of the steps and guide you through the rest. If it doesn't run for you, feel free to {file an issue}[https://github.com/matschaffer/knife-solo/issues].
+
+When running integration tests all output is sent to the log directory into a file that matches matches the test case name. The EC2Runner log is the main runner log that contains information about instance provisioning.
+
+Note that instances will remain running until your tests pass. This aids in speeding up the test cycle. Upon succesfful test completion you'll be given 10 seconds to cancel the process before the instances are cleaned up. Note that any instance tagged with <tt>knife_solo_integration_user == $USER</tt> will be cleaned up. Or if you want to leave your instances running regardless, specify <tt>SKIP_DESTROY=true</tt> as an environment variable.
+
+To make an integration test, create a file in the +test/integration+ directory and a test class that inherits from +IntegrationTest+ and includes a module from +test/integration/cases+. You can override methods as necessary, but generally you only need to override +user+ and +image_id+ to specify the user name and AMI ID.
+
+If you're interested in contributing, contact me via GitHub or have a look at the {GitHub issues page}[https://github.com/matschaffer/knife-solo/issues].

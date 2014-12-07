@@ -1,0 +1,11 @@
+<VirtualHost *:80>
+    ServerName centos.vm
+    DocumentRoot /var/www/src/centos/public
+
+    <Directory /var/www/src/centos/public>
+        Options All
+        AllowOverride All
+        Order allow,deny
+        Allow from all
+   </Directory>
+</VirtualHost>

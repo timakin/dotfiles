@@ -1,0 +1,6 @@
+name             "secret_cookbook"
+maintainer       "Mat Schaffer"
+maintainer_email "mat@schaffer.me"
+license          "MIT"
+description      "Spits out a file containing a secret data bag value"
+version          "0.0.1"

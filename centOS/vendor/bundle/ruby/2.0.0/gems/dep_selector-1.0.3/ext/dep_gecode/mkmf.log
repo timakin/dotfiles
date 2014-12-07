@@ -1,0 +1,353 @@
+find_library: checking for main() in -lgecodesupport... -------------------- yes
+
+"/usr/bin/clang -o conftest -I/usr/local/rvm/rubies/ruby-2.0.0-p247/include/ruby-2.0.0/x86_64-darwin12.3.0 -I/usr/local/rvm/rubies/ruby-2.0.0-p247/include/ruby-2.0.0/ruby/backward -I/usr/local/rvm/rubies/ruby-2.0.0-p247/include/ruby-2.0.0 -I. -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT   -O3 -I/Users/mpapis/.sm/pkg/active/include -fPIC -pipe conftest.c  -L. -L/usr/local/rvm/rubies/ruby-2.0.0-p247/lib -L.  -L/Users/mpapis/.sm/pkg/active/lib -L/usr/lib -fPIC -Bstatic -fstack-protector   -arch x86_64   -lruby-static  -lpthread -ldl -lobjc "
+ld: warning: directory not found for option '-L/Users/mpapis/.sm/pkg/active/lib'
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: int main(int argc, char **argv)
+4: {
+5:   return 0;
+6: }
+/* end */
+
+"/usr/bin/clang -o conftest -I/usr/local/rvm/rubies/ruby-2.0.0-p247/include/ruby-2.0.0/x86_64-darwin12.3.0 -I/usr/local/rvm/rubies/ruby-2.0.0-p247/include/ruby-2.0.0/ruby/backward -I/usr/local/rvm/rubies/ruby-2.0.0-p247/include/ruby-2.0.0 -I. -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT   -O3 -I/Users/mpapis/.sm/pkg/active/include -fPIC -pipe conftest.c  -L. -L/usr/local/rvm/rubies/ruby-2.0.0-p247/lib -L.  -L/Users/mpapis/.sm/pkg/active/lib -L/usr/lib -fPIC -Bstatic -fstack-protector   -arch x86_64   -lruby-static -lgecodesupport  -lpthread -ldl -lobjc "
+conftest.c:5:57: error: use of undeclared identifier 'main'
+int t(void) { void ((*volatile p)()); p = (void ((*)()))main; return 0; }
+                                                        ^
+1 error generated.
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int t(void) { void ((*volatile p)()); p = (void ((*)()))main; return 0; }
+ 6: int main(int argc, char **argv)
+ 7: {
+ 8:   if (argc > 1000000) {
+ 9:     printf("%p", &t);
+10:   }
+11: 
+12:   return 0;
+13: }
+/* end */
+
+"/usr/bin/clang -o conftest -I/usr/local/rvm/rubies/ruby-2.0.0-p247/include/ruby-2.0.0/x86_64-darwin12.3.0 -I/usr/local/rvm/rubies/ruby-2.0.0-p247/include/ruby-2.0.0/ruby/backward -I/usr/local/rvm/rubies/ruby-2.0.0-p247/include/ruby-2.0.0 -I. -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT   -O3 -I/Users/mpapis/.sm/pkg/active/include -fPIC -pipe conftest.c  -L. -L/usr/local/rvm/rubies/ruby-2.0.0-p247/lib -L.  -L/Users/mpapis/.sm/pkg/active/lib -L/usr/lib -fPIC -Bstatic -fstack-protector   -arch x86_64   -lruby-static -lgecodesupport  -lpthread -ldl -lobjc "
+conftest.c:5:15: warning: implicit declaration of function 'main' is invalid in C99 [-Wimplicit-function-declaration]
+int t(void) { main(); return 0; }
+              ^
+1 warning generated.
+ld: warning: directory not found for option '-L/Users/mpapis/.sm/pkg/active/lib'
+ld: library not found for -lgecodesupport
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int t(void) { main(); return 0; }
+ 6: int main(int argc, char **argv)
+ 7: {
+ 8:   if (argc > 1000000) {
+ 9:     printf("%p", &t);
+10:   }
+11: 
+12:   return 0;
+13: }
+/* end */
+
+"/usr/bin/clang -o conftest -I/usr/local/rvm/rubies/ruby-2.0.0-p247/include/ruby-2.0.0/x86_64-darwin12.3.0 -I/usr/local/rvm/rubies/ruby-2.0.0-p247/include/ruby-2.0.0/ruby/backward -I/usr/local/rvm/rubies/ruby-2.0.0-p247/include/ruby-2.0.0 -I. -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT   -O3 -I/Users/mpapis/.sm/pkg/active/include -fPIC -pipe conftest.c  -L. -L/usr/local/rvm/rubies/ruby-2.0.0-p247/lib -L/Users/takahashiseiji/Desktop/dotfiles/centOS/vendor/bundle/ruby/2.0.0/gems/dep-selector-libgecode-1.0.2/lib/dep-selector-libgecode/vendored-gecode/lib -L.  -L/Users/mpapis/.sm/pkg/active/lib -L/usr/lib -fPIC -Bstatic -fstack-protector   -arch x86_64   -lruby-static -lgecodesupport  -lpthread -ldl -lobjc "
+conftest.c:5:57: error: use of undeclared identifier 'main'
+int t(void) { void ((*volatile p)()); p = (void ((*)()))main; return 0; }
+                                                        ^
+1 error generated.
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int t(void) { void ((*volatile p)()); p = (void ((*)()))main; return 0; }
+ 6: int main(int argc, char **argv)
+ 7: {
+ 8:   if (argc > 1000000) {
+ 9:     printf("%p", &t);
+10:   }
+11: 
+12:   return 0;
+13: }
+/* end */
+
+"/usr/bin/clang -o conftest -I/usr/local/rvm/rubies/ruby-2.0.0-p247/include/ruby-2.0.0/x86_64-darwin12.3.0 -I/usr/local/rvm/rubies/ruby-2.0.0-p247/include/ruby-2.0.0/ruby/backward -I/usr/local/rvm/rubies/ruby-2.0.0-p247/include/ruby-2.0.0 -I. -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT   -O3 -I/Users/mpapis/.sm/pkg/active/include -fPIC -pipe conftest.c  -L. -L/usr/local/rvm/rubies/ruby-2.0.0-p247/lib -L/Users/takahashiseiji/Desktop/dotfiles/centOS/vendor/bundle/ruby/2.0.0/gems/dep-selector-libgecode-1.0.2/lib/dep-selector-libgecode/vendored-gecode/lib -L.  -L/Users/mpapis/.sm/pkg/active/lib -L/usr/lib -fPIC -Bstatic -fstack-protector   -arch x86_64   -lruby-static -lgecodesupport  -lpthread -ldl -lobjc "
+conftest.c:5:15: warning: implicit declaration of function 'main' is invalid in C99 [-Wimplicit-function-declaration]
+int t(void) { main(); return 0; }
+              ^
+1 warning generated.
+ld: warning: directory not found for option '-L/Users/mpapis/.sm/pkg/active/lib'
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int t(void) { main(); return 0; }
+ 6: int main(int argc, char **argv)
+ 7: {
+ 8:   if (argc > 1000000) {
+ 9:     printf("%p", &t);
+10:   }
+11: 
+12:   return 0;
+13: }
+/* end */
+
+--------------------
+
+have_library: checking for main() in -lgecodesupport... -------------------- yes
+
+"/usr/bin/clang -o conftest -I/usr/local/rvm/rubies/ruby-2.0.0-p247/include/ruby-2.0.0/x86_64-darwin12.3.0 -I/usr/local/rvm/rubies/ruby-2.0.0-p247/include/ruby-2.0.0/ruby/backward -I/usr/local/rvm/rubies/ruby-2.0.0-p247/include/ruby-2.0.0 -I. -I/Users/takahashiseiji/Desktop/dotfiles/centOS/vendor/bundle/ruby/2.0.0/gems/dep-selector-libgecode-1.0.2/lib/dep-selector-libgecode/vendored-gecode/include -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT   -O3 -I/Users/mpapis/.sm/pkg/active/include -fPIC -pipe conftest.c  -L. -L/usr/local/rvm/rubies/ruby-2.0.0-p247/lib -L/Users/takahashiseiji/Desktop/dotfiles/centOS/vendor/bundle/ruby/2.0.0/gems/dep-selector-libgecode-1.0.2/lib/dep-selector-libgecode/vendored-gecode/lib -L.  -L/Users/mpapis/.sm/pkg/active/lib -L/usr/lib -fPIC -Bstatic -fstack-protector   -arch x86_64  -lgecodesupport  -lruby-static -lgecodesupport -lgecodesupport  -lpthread -ldl -lobjc "
+conftest.c:5:57: error: use of undeclared identifier 'main'
+int t(void) { void ((*volatile p)()); p = (void ((*)()))main; return 0; }
+                                                        ^
+1 error generated.
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int t(void) { void ((*volatile p)()); p = (void ((*)()))main; return 0; }
+ 6: int main(int argc, char **argv)
+ 7: {
+ 8:   if (argc > 1000000) {
+ 9:     printf("%p", &t);
+10:   }
+11: 
+12:   return 0;
+13: }
+/* end */
+
+"/usr/bin/clang -o conftest -I/usr/local/rvm/rubies/ruby-2.0.0-p247/include/ruby-2.0.0/x86_64-darwin12.3.0 -I/usr/local/rvm/rubies/ruby-2.0.0-p247/include/ruby-2.0.0/ruby/backward -I/usr/local/rvm/rubies/ruby-2.0.0-p247/include/ruby-2.0.0 -I. -I/Users/takahashiseiji/Desktop/dotfiles/centOS/vendor/bundle/ruby/2.0.0/gems/dep-selector-libgecode-1.0.2/lib/dep-selector-libgecode/vendored-gecode/include -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT   -O3 -I/Users/mpapis/.sm/pkg/active/include -fPIC -pipe conftest.c  -L. -L/usr/local/rvm/rubies/ruby-2.0.0-p247/lib -L/Users/takahashiseiji/Desktop/dotfiles/centOS/vendor/bundle/ruby/2.0.0/gems/dep-selector-libgecode-1.0.2/lib/dep-selector-libgecode/vendored-gecode/lib -L.  -L/Users/mpapis/.sm/pkg/active/lib -L/usr/lib -fPIC -Bstatic -fstack-protector   -arch x86_64  -lgecodesupport  -lruby-static -lgecodesupport -lgecodesupport  -lpthread -ldl -lobjc "
+conftest.c:5:15: warning: implicit declaration of function 'main' is invalid in C99 [-Wimplicit-function-declaration]
+int t(void) { main(); return 0; }
+              ^
+1 warning generated.
+ld: warning: directory not found for option '-L/Users/mpapis/.sm/pkg/active/lib'
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int t(void) { main(); return 0; }
+ 6: int main(int argc, char **argv)
+ 7: {
+ 8:   if (argc > 1000000) {
+ 9:     printf("%p", &t);
+10:   }
+11: 
+12:   return 0;
+13: }
+/* end */
+
+--------------------
+
+have_library: checking for main() in -lgecodekernel... -------------------- yes
+
+"/usr/bin/clang -o conftest -I/usr/local/rvm/rubies/ruby-2.0.0-p247/include/ruby-2.0.0/x86_64-darwin12.3.0 -I/usr/local/rvm/rubies/ruby-2.0.0-p247/include/ruby-2.0.0/ruby/backward -I/usr/local/rvm/rubies/ruby-2.0.0-p247/include/ruby-2.0.0 -I. -I/Users/takahashiseiji/Desktop/dotfiles/centOS/vendor/bundle/ruby/2.0.0/gems/dep-selector-libgecode-1.0.2/lib/dep-selector-libgecode/vendored-gecode/include -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT   -O3 -I/Users/mpapis/.sm/pkg/active/include -fPIC -pipe conftest.c  -L. -L/usr/local/rvm/rubies/ruby-2.0.0-p247/lib -L/Users/takahashiseiji/Desktop/dotfiles/centOS/vendor/bundle/ruby/2.0.0/gems/dep-selector-libgecode-1.0.2/lib/dep-selector-libgecode/vendored-gecode/lib -L.  -L/Users/mpapis/.sm/pkg/active/lib -L/usr/lib -fPIC -Bstatic -fstack-protector   -arch x86_64  -lgecodesupport -lgecodesupport  -lruby-static -lgecodekernel -lgecodesupport -lgecodesupport  -lpthread -ldl -lobjc "
+conftest.c:5:57: error: use of undeclared identifier 'main'
+int t(void) { void ((*volatile p)()); p = (void ((*)()))main; return 0; }
+                                                        ^
+1 error generated.
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int t(void) { void ((*volatile p)()); p = (void ((*)()))main; return 0; }
+ 6: int main(int argc, char **argv)
+ 7: {
+ 8:   if (argc > 1000000) {
+ 9:     printf("%p", &t);
+10:   }
+11: 
+12:   return 0;
+13: }
+/* end */
+
+"/usr/bin/clang -o conftest -I/usr/local/rvm/rubies/ruby-2.0.0-p247/include/ruby-2.0.0/x86_64-darwin12.3.0 -I/usr/local/rvm/rubies/ruby-2.0.0-p247/include/ruby-2.0.0/ruby/backward -I/usr/local/rvm/rubies/ruby-2.0.0-p247/include/ruby-2.0.0 -I. -I/Users/takahashiseiji/Desktop/dotfiles/centOS/vendor/bundle/ruby/2.0.0/gems/dep-selector-libgecode-1.0.2/lib/dep-selector-libgecode/vendored-gecode/include -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT   -O3 -I/Users/mpapis/.sm/pkg/active/include -fPIC -pipe conftest.c  -L. -L/usr/local/rvm/rubies/ruby-2.0.0-p247/lib -L/Users/takahashiseiji/Desktop/dotfiles/centOS/vendor/bundle/ruby/2.0.0/gems/dep-selector-libgecode-1.0.2/lib/dep-selector-libgecode/vendored-gecode/lib -L.  -L/Users/mpapis/.sm/pkg/active/lib -L/usr/lib -fPIC -Bstatic -fstack-protector   -arch x86_64  -lgecodesupport -lgecodesupport  -lruby-static -lgecodekernel -lgecodesupport -lgecodesupport  -lpthread -ldl -lobjc "
+conftest.c:5:15: warning: implicit declaration of function 'main' is invalid in C99 [-Wimplicit-function-declaration]
+int t(void) { main(); return 0; }
+              ^
+1 warning generated.
+ld: warning: directory not found for option '-L/Users/mpapis/.sm/pkg/active/lib'
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int t(void) { main(); return 0; }
+ 6: int main(int argc, char **argv)
+ 7: {
+ 8:   if (argc > 1000000) {
+ 9:     printf("%p", &t);
+10:   }
+11: 
+12:   return 0;
+13: }
+/* end */
+
+--------------------
+
+have_library: checking for main() in -lgecodeint... -------------------- yes
+
+"/usr/bin/clang -o conftest -I/usr/local/rvm/rubies/ruby-2.0.0-p247/include/ruby-2.0.0/x86_64-darwin12.3.0 -I/usr/local/rvm/rubies/ruby-2.0.0-p247/include/ruby-2.0.0/ruby/backward -I/usr/local/rvm/rubies/ruby-2.0.0-p247/include/ruby-2.0.0 -I. -I/Users/takahashiseiji/Desktop/dotfiles/centOS/vendor/bundle/ruby/2.0.0/gems/dep-selector-libgecode-1.0.2/lib/dep-selector-libgecode/vendored-gecode/include -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT   -O3 -I/Users/mpapis/.sm/pkg/active/include -fPIC -pipe conftest.c  -L. -L/usr/local/rvm/rubies/ruby-2.0.0-p247/lib -L/Users/takahashiseiji/Desktop/dotfiles/centOS/vendor/bundle/ruby/2.0.0/gems/dep-selector-libgecode-1.0.2/lib/dep-selector-libgecode/vendored-gecode/lib -L.  -L/Users/mpapis/.sm/pkg/active/lib -L/usr/lib -fPIC -Bstatic -fstack-protector   -arch x86_64  -lgecodekernel -lgecodesupport -lgecodesupport  -lruby-static -lgecodeint -lgecodekernel -lgecodesupport -lgecodesupport  -lpthread -ldl -lobjc "
+conftest.c:5:57: error: use of undeclared identifier 'main'
+int t(void) { void ((*volatile p)()); p = (void ((*)()))main; return 0; }
+                                                        ^
+1 error generated.
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int t(void) { void ((*volatile p)()); p = (void ((*)()))main; return 0; }
+ 6: int main(int argc, char **argv)
+ 7: {
+ 8:   if (argc > 1000000) {
+ 9:     printf("%p", &t);
+10:   }
+11: 
+12:   return 0;
+13: }
+/* end */
+
+"/usr/bin/clang -o conftest -I/usr/local/rvm/rubies/ruby-2.0.0-p247/include/ruby-2.0.0/x86_64-darwin12.3.0 -I/usr/local/rvm/rubies/ruby-2.0.0-p247/include/ruby-2.0.0/ruby/backward -I/usr/local/rvm/rubies/ruby-2.0.0-p247/include/ruby-2.0.0 -I. -I/Users/takahashiseiji/Desktop/dotfiles/centOS/vendor/bundle/ruby/2.0.0/gems/dep-selector-libgecode-1.0.2/lib/dep-selector-libgecode/vendored-gecode/include -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT   -O3 -I/Users/mpapis/.sm/pkg/active/include -fPIC -pipe conftest.c  -L. -L/usr/local/rvm/rubies/ruby-2.0.0-p247/lib -L/Users/takahashiseiji/Desktop/dotfiles/centOS/vendor/bundle/ruby/2.0.0/gems/dep-selector-libgecode-1.0.2/lib/dep-selector-libgecode/vendored-gecode/lib -L.  -L/Users/mpapis/.sm/pkg/active/lib -L/usr/lib -fPIC -Bstatic -fstack-protector   -arch x86_64  -lgecodekernel -lgecodesupport -lgecodesupport  -lruby-static -lgecodeint -lgecodekernel -lgecodesupport -lgecodesupport  -lpthread -ldl -lobjc "
+conftest.c:5:15: warning: implicit declaration of function 'main' is invalid in C99 [-Wimplicit-function-declaration]
+int t(void) { main(); return 0; }
+              ^
+1 warning generated.
+ld: warning: directory not found for option '-L/Users/mpapis/.sm/pkg/active/lib'
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int t(void) { main(); return 0; }
+ 6: int main(int argc, char **argv)
+ 7: {
+ 8:   if (argc > 1000000) {
+ 9:     printf("%p", &t);
+10:   }
+11: 
+12:   return 0;
+13: }
+/* end */
+
+--------------------
+
+have_library: checking for main() in -lgecodeminimodel... -------------------- yes
+
+"/usr/bin/clang -o conftest -I/usr/local/rvm/rubies/ruby-2.0.0-p247/include/ruby-2.0.0/x86_64-darwin12.3.0 -I/usr/local/rvm/rubies/ruby-2.0.0-p247/include/ruby-2.0.0/ruby/backward -I/usr/local/rvm/rubies/ruby-2.0.0-p247/include/ruby-2.0.0 -I. -I/Users/takahashiseiji/Desktop/dotfiles/centOS/vendor/bundle/ruby/2.0.0/gems/dep-selector-libgecode-1.0.2/lib/dep-selector-libgecode/vendored-gecode/include -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT   -O3 -I/Users/mpapis/.sm/pkg/active/include -fPIC -pipe conftest.c  -L. -L/usr/local/rvm/rubies/ruby-2.0.0-p247/lib -L/Users/takahashiseiji/Desktop/dotfiles/centOS/vendor/bundle/ruby/2.0.0/gems/dep-selector-libgecode-1.0.2/lib/dep-selector-libgecode/vendored-gecode/lib -L.  -L/Users/mpapis/.sm/pkg/active/lib -L/usr/lib -fPIC -Bstatic -fstack-protector   -arch x86_64  -lgecodeint -lgecodekernel -lgecodesupport -lgecodesupport  -lruby-static -lgecodeminimodel -lgecodeint -lgecodekernel -lgecodesupport -lgecodesupport  -lpthread -ldl -lobjc "
+conftest.c:5:57: error: use of undeclared identifier 'main'
+int t(void) { void ((*volatile p)()); p = (void ((*)()))main; return 0; }
+                                                        ^
+1 error generated.
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int t(void) { void ((*volatile p)()); p = (void ((*)()))main; return 0; }
+ 6: int main(int argc, char **argv)
+ 7: {
+ 8:   if (argc > 1000000) {
+ 9:     printf("%p", &t);
+10:   }
+11: 
+12:   return 0;
+13: }
+/* end */
+
+"/usr/bin/clang -o conftest -I/usr/local/rvm/rubies/ruby-2.0.0-p247/include/ruby-2.0.0/x86_64-darwin12.3.0 -I/usr/local/rvm/rubies/ruby-2.0.0-p247/include/ruby-2.0.0/ruby/backward -I/usr/local/rvm/rubies/ruby-2.0.0-p247/include/ruby-2.0.0 -I. -I/Users/takahashiseiji/Desktop/dotfiles/centOS/vendor/bundle/ruby/2.0.0/gems/dep-selector-libgecode-1.0.2/lib/dep-selector-libgecode/vendored-gecode/include -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT   -O3 -I/Users/mpapis/.sm/pkg/active/include -fPIC -pipe conftest.c  -L. -L/usr/local/rvm/rubies/ruby-2.0.0-p247/lib -L/Users/takahashiseiji/Desktop/dotfiles/centOS/vendor/bundle/ruby/2.0.0/gems/dep-selector-libgecode-1.0.2/lib/dep-selector-libgecode/vendored-gecode/lib -L.  -L/Users/mpapis/.sm/pkg/active/lib -L/usr/lib -fPIC -Bstatic -fstack-protector   -arch x86_64  -lgecodeint -lgecodekernel -lgecodesupport -lgecodesupport  -lruby-static -lgecodeminimodel -lgecodeint -lgecodekernel -lgecodesupport -lgecodesupport  -lpthread -ldl -lobjc "
+conftest.c:5:15: warning: implicit declaration of function 'main' is invalid in C99 [-Wimplicit-function-declaration]
+int t(void) { main(); return 0; }
+              ^
+1 warning generated.
+ld: warning: directory not found for option '-L/Users/mpapis/.sm/pkg/active/lib'
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int t(void) { main(); return 0; }
+ 6: int main(int argc, char **argv)
+ 7: {
+ 8:   if (argc > 1000000) {
+ 9:     printf("%p", &t);
+10:   }
+11: 
+12:   return 0;
+13: }
+/* end */
+
+--------------------
+
+have_library: checking for main() in -lgecodesearch... -------------------- yes
+
+"/usr/bin/clang -o conftest -I/usr/local/rvm/rubies/ruby-2.0.0-p247/include/ruby-2.0.0/x86_64-darwin12.3.0 -I/usr/local/rvm/rubies/ruby-2.0.0-p247/include/ruby-2.0.0/ruby/backward -I/usr/local/rvm/rubies/ruby-2.0.0-p247/include/ruby-2.0.0 -I. -I/Users/takahashiseiji/Desktop/dotfiles/centOS/vendor/bundle/ruby/2.0.0/gems/dep-selector-libgecode-1.0.2/lib/dep-selector-libgecode/vendored-gecode/include -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT   -O3 -I/Users/mpapis/.sm/pkg/active/include -fPIC -pipe conftest.c  -L. -L/usr/local/rvm/rubies/ruby-2.0.0-p247/lib -L/Users/takahashiseiji/Desktop/dotfiles/centOS/vendor/bundle/ruby/2.0.0/gems/dep-selector-libgecode-1.0.2/lib/dep-selector-libgecode/vendored-gecode/lib -L.  -L/Users/mpapis/.sm/pkg/active/lib -L/usr/lib -fPIC -Bstatic -fstack-protector   -arch x86_64  -lgecodeminimodel -lgecodeint -lgecodekernel -lgecodesupport -lgecodesupport  -lruby-static -lgecodesearch -lgecodeminimodel -lgecodeint -lgecodekernel -lgecodesupport -lgecodesupport  -lpthread -ldl -lobjc "
+conftest.c:5:57: error: use of undeclared identifier 'main'
+int t(void) { void ((*volatile p)()); p = (void ((*)()))main; return 0; }
+                                                        ^
+1 error generated.
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int t(void) { void ((*volatile p)()); p = (void ((*)()))main; return 0; }
+ 6: int main(int argc, char **argv)
+ 7: {
+ 8:   if (argc > 1000000) {
+ 9:     printf("%p", &t);
+10:   }
+11: 
+12:   return 0;
+13: }
+/* end */
+
+"/usr/bin/clang -o conftest -I/usr/local/rvm/rubies/ruby-2.0.0-p247/include/ruby-2.0.0/x86_64-darwin12.3.0 -I/usr/local/rvm/rubies/ruby-2.0.0-p247/include/ruby-2.0.0/ruby/backward -I/usr/local/rvm/rubies/ruby-2.0.0-p247/include/ruby-2.0.0 -I. -I/Users/takahashiseiji/Desktop/dotfiles/centOS/vendor/bundle/ruby/2.0.0/gems/dep-selector-libgecode-1.0.2/lib/dep-selector-libgecode/vendored-gecode/include -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT   -O3 -I/Users/mpapis/.sm/pkg/active/include -fPIC -pipe conftest.c  -L. -L/usr/local/rvm/rubies/ruby-2.0.0-p247/lib -L/Users/takahashiseiji/Desktop/dotfiles/centOS/vendor/bundle/ruby/2.0.0/gems/dep-selector-libgecode-1.0.2/lib/dep-selector-libgecode/vendored-gecode/lib -L.  -L/Users/mpapis/.sm/pkg/active/lib -L/usr/lib -fPIC -Bstatic -fstack-protector   -arch x86_64  -lgecodeminimodel -lgecodeint -lgecodekernel -lgecodesupport -lgecodesupport  -lruby-static -lgecodesearch -lgecodeminimodel -lgecodeint -lgecodekernel -lgecodesupport -lgecodesupport  -lpthread -ldl -lobjc "
+conftest.c:5:15: warning: implicit declaration of function 'main' is invalid in C99 [-Wimplicit-function-declaration]
+int t(void) { main(); return 0; }
+              ^
+1 warning generated.
+ld: warning: directory not found for option '-L/Users/mpapis/.sm/pkg/active/lib'
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int t(void) { main(); return 0; }
+ 6: int main(int argc, char **argv)
+ 7: {
+ 8:   if (argc > 1000000) {
+ 9:     printf("%p", &t);
+10:   }
+11: 
+12:   return 0;
+13: }
+/* end */
+
+--------------------
+
