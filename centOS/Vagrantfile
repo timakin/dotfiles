@@ -88,19 +88,30 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   #
   config.omnibus.chef_version = :latest
   config.vm.provision "chef_solo" do |chef|
-     chef.cookbooks_path = "./vendor/chef-repo/site-cookbooks/"
+      chef.log_level = :debug
+  #   chef.cookbooks_path = "./vendor/chef-repo/site-cookbooks/"
+      chef.cookbooks_path = "./vendor/chef-repo/cookbooks/"
   #   chef.roles_path = "../my-recipes/roles"
   #   chef.data_bags_path = "../my-recipes/data_bags"
-     chef.run_list = %w[
-          recipe[remi]
-          recipe[php]
-        ]
-  #   chef.add_recipe "git"
-  #   chef.add_recipe "mysql"
+      #chef.run_list = %w[]
+      chef.add_recipe 'yum'
+      chef.add_recipe 'build-essential'
+      chef.add_recipe 'ruby_build'
+      chef.add_recipe 'rbenv::system'
+      chef.add_recipe 'git'
+      chef.add_recipe 'vim'
+      chef.add_recipe 'nginx'
+      chef.add_recipe 'nodejs'
+      chef.add_recipe "php"
+      chef.add_recipe "mysql::server"
+      chef.add_recipe "mysql::client"
+      chef.add_recipe "the_silver_searcher"
+      chef.add_recipe "python"
+      chef.add_recipe "mongodb"
+      chef.add_recipe "zsh"
+      chef.add_recipe "screen"
   #   chef.add_role "web"
   #
-  #   # You may also specify custom JSON attributes:
-     chef.json = { mysql_password: "password" }
   end
 
   # Enable provisioning with chef server, specifying the chef server URL,
