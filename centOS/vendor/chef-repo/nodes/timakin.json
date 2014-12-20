@@ -21,7 +21,8 @@
     "recipe[chsh_to_zsh]",
     "recipe[zaw]",
     "recipe[neobundle]",
-    "recipe[screen]"
+    "recipe[screen]",
+    "recipe[docker]"
   ],
   "automatic": {
     "ipaddress": "timakin"
