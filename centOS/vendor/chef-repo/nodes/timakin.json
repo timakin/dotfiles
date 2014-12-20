@@ -16,6 +16,10 @@
     "recipe[python]",
     "recipe[mongodb]",
     "recipe[zsh]",
+    "recipe[oh-my-zsh]",
+    "recipe[chsh_to_zsh]",
+    "recipe[zaw]",
+    "recipe[neobundle]",
     "recipe[screen]"
   ],
   "automatic": {
