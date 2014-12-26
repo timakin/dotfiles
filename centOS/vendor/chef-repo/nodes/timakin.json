@@ -22,7 +22,8 @@
     "recipe[zaw]",
     "recipe[neobundle]",
     "recipe[screen]",
-    "recipe[docker]"
+    "recipe[docker]",
+    "recipe[express-generator]"
   ],
   "automatic": {
     "ipaddress": "timakin"

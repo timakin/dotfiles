@@ -17,3 +17,8 @@ bash "docker installation" do
     sudo docker pull ubuntu
   EOT
 end
+
+template "home/vagrant/Dockerfile" do
+  source 'Dockerfile'
+  mode '0777'
+end
