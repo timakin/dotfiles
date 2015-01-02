@@ -20,3 +20,9 @@ end
 file "home/vagrant/.zshrc" do
   content IO.read("home/vagrant/.dotfiles/zshrc")
 end
+
+bash "remove dotfiles" do
+  code <<-EOT
+    rm -rf /home/vagrant/.dotfiles
+  EOT
+end

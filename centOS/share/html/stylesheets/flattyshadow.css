@@ -1,0 +1,42 @@
+.flatty_shadow{
+	display: inline-block;
+	border-radius: 50%;
+}
+.flatty_icon {
+	width: 130px;
+	height: 130px;
+	background-color: #f65034;
+	overflow: hidden;
+	display: inline-block;
+	margin: 0 auto;
+	vertical-align: middle;
+	text-align: center;
+	border-radius: 50%;
+}
+.flatty_icon:after {
+	content: '';
+	height: 100%;
+	vertical-align: middle;
+	text-align: center;
+	display: inline-block;
+}
+.flatty_icon .centered {
+	vertical-align: middle;
+	display: inline-block;
+	position: relative;
+	margin-top: -55px;
+	margin-left: -58px;
+}
+.flatty_icon .fs_icon{
+	margin: 0 auto;
+	vertical-align: middle;
+	width: 50px;
+	height: 50px;
+	font-size: 60px;
+	color: #fff;
+	background-color: transparent !important;
+}
+.fs_icon{
+	background-color: transparent !important;
+	position: absolute;	
+}
