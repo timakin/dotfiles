@@ -107,9 +107,16 @@
   border-bottom: 1px solid rgba(0,0,0,0.16);
 }
 
+.introTextWrapper {
+  width: 170px;
+  margin: 0 auto;
+
+}
+
 .sampleCase {
   background-color: white;
 }
+
 
 .jumbotronSampleCase {
   padding: 100px 0 100px 0;
