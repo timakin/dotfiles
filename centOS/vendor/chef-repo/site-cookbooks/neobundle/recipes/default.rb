@@ -23,6 +23,7 @@ directory "home/vagrant/.vim/bundle" do
   action :create
 end
 
+
 git "home/vagrant/.vim/bundle/neobundle.vim" do
   repository "git@github.com:Shougo/neobundle.vim.git"
   reference "master"

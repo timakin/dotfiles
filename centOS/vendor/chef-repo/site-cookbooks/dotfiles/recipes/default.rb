@@ -9,7 +9,7 @@
 git "home/vagrant/.dotfiles" do
   repository "git://github.com/timakin/dotfiles.git"
   reference "master"
-  action :checkout
+  action :sync
   user "vagrant"
   group "vagrant"
 end
@@ -19,10 +19,4 @@ file "home/vagrant/.vimrc" do
 end
 file "home/vagrant/.zshrc" do
   content IO.read("home/vagrant/.dotfiles/zshrc")
-end
-
-bash "remove dotfiles" do
-  code <<-EOT
-    rm -rf /home/vagrant/.dotfiles
-  EOT
 end

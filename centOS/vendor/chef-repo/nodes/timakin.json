@@ -23,7 +23,8 @@
     "recipe[neobundle]",
     "recipe[screen]",
     "recipe[docker]",
-    "recipe[express-generator]"
+    "recipe[express-generator]",
+    "recipe[yoeman]"
   ],
   "automatic": {
     "ipaddress": "timakin"
