@@ -1,0 +1,20 @@
+node_name <%= host.inspect %>
+
+base = File.expand_path('..', __FILE__)
+
+nodes_path                File.join(base, 'nodes')
+role_path                 File.join(base, 'roles')
+data_bag_path             File.join(base, 'data_bags')
+encrypted_data_bag_secret File.join(base, 'data_bag_key')
+environment_path          File.join(base, 'environments')
+environment               <%= node_environment.inspect %>
+ssl_verify_mode           <%= ssl_verify_mode.inspect %>
+
+cookbook_path []
+<% cookbook_paths.each_with_index do |path, i| -%>
+cookbook_path << File.join(base, 'cookbooks-<%= i+1 %>') # <%= path %>
+<% end -%>
+
+<% proxy_settings.each_pair do |k, v| -%>
+<%= k %>     "<%= v %>"
+<% end -%>

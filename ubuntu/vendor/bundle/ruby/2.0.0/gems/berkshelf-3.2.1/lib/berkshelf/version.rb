@@ -1,0 +1,3 @@
+module Berkshelf
+  VERSION = "3.2.1"
+end

@@ -1,0 +1,26 @@
+language: ruby
+rvm:
+  - 1.9.3
+  - 2.0.0
+  - 2.1
+notifications:
+  irc:
+    channels:
+      - "irc.freenode.org#berkshelf"
+    skip_join: true
+    use_notice: true
+  webhooks:
+    urls:
+      - "https://webhooks.gitter.im/e/cdd41ff6c4d1f062c2f1"
+branches:
+  only:
+    - master
+env: USE_SYSTEM_GECODE=1
+bundler_args: --without guard --jobs 7
+before_install:
+  - sudo apt-get install -qq libarchive12 libarchive-dev libgecode-dev graphviz
+before_script:
+  - echo "StrictHostKeyChecking no" > ~/.ssh/config
+  - git config --global user.email "ci@berkshelf.com"
+  - git config --global user.name "Berkshelf"
+script: bundle exec thor spec:ci
