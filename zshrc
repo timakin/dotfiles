@@ -10,7 +10,7 @@ export PKG_CONFIG_PATH=/usr/local/lib/pkgconfig
 # bundle open editor => Sublime Text
 function sublg { bundle show $@ | xargs subl; }
 export BUNDLER_EDITOR=subl
-
+export GUARD_GEM_SILENCE_DEPRECATIONS=1
 # 色についての設定
 autoload colors
 colors
@@ -94,12 +94,18 @@ alias best='cd ~/Desktop/BEST10-iOS/;open Best10.xcworkspace'
 alias sakura='ssh timakin@153.121.70.114'
 alias shellreboot='exec ${SHELL} -l'
 
+# bundler
+alias gb='gem build'
+alias guni='gem uninstall'
+alias gi='gem install'
+
 # Access through ssh Setting
 alias nakajima='ssh takahashi@131.113.204.178 -p 8892'
 alias sendtonakajima='sftp -oPort=8892 takahashi@131.113.204.178'
 
+
 # zaw setting
-source ~/.zaw/zaw.zsh
+source ~/zsh_plugins/zaw/zaw.zsh
 bindkey '^[d' zaw-cdr
 bindkey '^[g' zaw-git-branches
 bindkey '^[@' zaw-gitdir
@@ -123,3 +129,14 @@ zaw-register-src -n gitdir zaw-src-gitdir
 
 ### Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
+
+### mongo start
+alias gomongo='mongod -dbpath /usr/local/var/mongodb'
+
+### pipsi
+export PATH=~/.local/bin:$PATH
+
+### brainwars-server/docker setting
+export DOCKER_HOST=tcp://192.168.59.103:2376
+export DOCKER_CERT_PATH=/Users/takahashiseiji/.boot2docker/certs/boot2docker-vm
+export DOCKER_TLS_VERIFY=1
