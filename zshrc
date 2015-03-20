@@ -137,6 +137,6 @@ alias gomongo='mongod -dbpath /usr/local/var/mongodb'
 export PATH=~/.local/bin:$PATH
 
 ### brainwars-server/docker setting
-export DOCKER_HOST=tcp://192.168.59.103:2376
+export DOCKER_HOST=tcp://192.168.59.104:2376
 export DOCKER_CERT_PATH=/Users/takahashiseiji/.boot2docker/certs/boot2docker-vm
 export DOCKER_TLS_VERIFY=1
