@@ -1,5 +1,0 @@
-module Buff
-  module Extensions
-    VERSION = "1.0.0"
-  end
-end

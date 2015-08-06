@@ -28,8 +28,6 @@ precmd () {
 }
 PROMPT="%{${fg[yellow]}%}[%n@%~%1(v|%F{green}%1v%f|)%{${fg[yellow]}%}]%{${reset_color}%}%b "
 
-
-
 # 自動補完
 autoload -U compinit
 compinit
@@ -100,11 +98,6 @@ alias gb='gem build'
 alias guni='gem uninstall'
 alias gi='gem install'
 
-# Access through ssh Setting
-alias nakajima='ssh takahashi@131.113.204.178 -p 8892'
-alias sendtonakajima='sftp -oPort=8892 takahashi@131.113.204.178'
-
-
 # zaw setting
 source ~/zsh_plugins/zaw/zaw.zsh
 bindkey '^[d' zaw-cdr
@@ -137,7 +130,10 @@ alias gomongo='mongod -dbpath /usr/local/var/mongodb'
 ### pipsi
 export PATH=~/.local/bin:$PATH
 
-### brainwars-server/docker setting
+### docker setting
 export DOCKER_HOST=tcp://192.168.59.103:2376
-export DOCKER_CERT_PATH=/Users/takahashiseiji/.boot2docker/certs/boot2docker-vm
 export DOCKER_TLS_VERIFY=1
+export DOCKER_CERT_PATH=/Users/seiji.takahashi/.boot2docker/certs/boot2docker-vm
+
+### sublime
+export PATH="/Applications/Sublime Text 2.app/Contents/SharedSupport/bin:$PATH"
