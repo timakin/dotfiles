@@ -81,6 +81,7 @@ NeoBundleLazy 'Shougo/unite.vim', {
 NeoBundle 'Shougo/neosnippet'
 NeoBundle 'Shougo/neosnippet-snippets'
 NeoBundle 'Rip-Rip/clang_complete'
+NeoBundle 'szw/vim-tags'
 call neobundle#end()
 autocmd VimEnter * NERDTree  
 syntax enable
@@ -108,3 +109,5 @@ if !exists('g:neocomplcache_keyword_patterns')
 endif
 
 
+NeoBundle 'vim-scripts/taglist.vim'
+NeoBundle 'szw/vim-tags'
