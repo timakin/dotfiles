@@ -78,6 +78,7 @@ alias gf='git fetch'
 alias gpom='git push origin master'
 alias delete-merged-branches="git branch --merged | grep -v '*' | xargs -I % git branch -d %"
 alias gip='git push origin `git rev-parse --abbrev-ref HEAD`'
+alias gipo='git pull origin master'
 
 # その他エイリアス
 alias de='cd Desktop'
@@ -92,6 +93,7 @@ alias best='cd ~/Desktop/BEST10-iOS/;open Best10.xcworkspace'
 alias sakura='ssh timakin@153.121.70.114'
 alias denasakura='ssh dena@153.121.70.114'
 alias shellreboot='exec ${SHELL} -l'
+alias dc='docker-compose'
 
 # bundler
 alias gb='gem build'

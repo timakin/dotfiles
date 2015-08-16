@@ -111,3 +111,11 @@ endif
 
 NeoBundle 'vim-scripts/taglist.vim'
 NeoBundle 'szw/vim-tags'
+
+NeoBundle 'terryma/vim-multiple-cursors'
+
+au FileType vim map <C-i>  :source %<CR>
+au FileType perl map <C-i>  :!perl %<CR>
+au FileType javascript map <C-i>  :!node %<CR>
+au FileType ruby map <C-i>  :!ruby %<CR>
+au FileType sh map <C-i>  :!sh %<CR>
