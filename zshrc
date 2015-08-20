@@ -1,15 +1,14 @@
 # mysql
-export PATH=$PATH:/usr/local/bin/mysql
 alias startms='/usr/local/bin/mysqld'
 alias mslogin='mysql -u root -p'
-# manpath
-export PATH=/opt/local/bin:/opt/local/sbin/:$PATH
+
+# Path Setting
 export MANPATH=/opt/local/man:$MANPATH
+export PATH=$PATH:/usr/local/bin/mysql
+export PATH=/opt/local/bin:/opt/local/sbin/:$PATH
+export PATH=~/.local/bin:$PATH
 export PKG_CONFIG_PATH=/usr/local/lib/pkgconfig
 
-# bundle open editor => Sublime Text
-function sublg { bundle show $@ | xargs subl; }
-export BUNDLER_EDITOR=subl
 export GUARD_GEM_SILENCE_DEPRECATIONS=1
 # 色についての設定
 autoload colors
@@ -37,7 +36,7 @@ HISTSIZE=10000
 SAVEHIST=10000
 setopt hist_ignore_dups
 
-# railsのエイリアス
+# rails
 alias be="bundle exec"
 alias r='be rails'
 alias rg='rails g'
@@ -54,51 +53,51 @@ alias spc='spring rails c'
 alias routing='subl config/routes.rb'
 alias union='bundle exec unicorn_rails -E production -c config/unicorn.rb'
 
-# pythonのエイリアス
+# python
 alias supy="sudo python"
 alias ip='ipython'
 
-# rubyのエイリアス
+# ruby
 alias use193="rvm use ruby-1.9.3-p327"
 alias use2="rvm use 2.0.0"
 
+# gem
+alias gb='gem build'
+alias gi='gem install'
+alias guni='gem uninstall'
+
 # git関連のエイリアス設定
-alias gst='git status'
-alias gsts='git status --short'
-alias gch='git checkout'
-alias graph='git log --graph --date=short --decorate=short --pretty=format:'%Cgreen%h %Creset%cd %Cblue%cn %Cred%d %Creset%s''
-alias stt='git status -uno'
-alias difff='git diff --color-words'
-alias glog='git log --pretty=short --graph'
-alias gad='git add . -A'
-alias oneglog='git log --pretty=short --graph --oneline'
 alias cam='git commit -a -m'
-alias gbr='git branch'
-alias gf='git fetch'
-alias gpom='git push origin master'
 alias delete-merged-branches="git branch --merged | grep -v '*' | xargs -I % git branch -d %"
+alias difff='git diff --color-words'
+alias gad='git add . -A'
+alias gbr='git branch'
+alias gch='git checkout'
+alias gf='git fetch'
 alias gip='git push origin `git rev-parse --abbrev-ref HEAD`'
 alias gipo='git pull origin master'
+alias glog='git log --pretty=short --graph'
+alias gpom='git push origin master'
+alias graph='git log --graph --date=short --decorate=short --pretty=format:'%Cgreen%h %Creset%cd %Cblue%cn %Cred%d %Creset%s''
+alias gst='git status'
+alias gsts='git status --short'
+alias oneglog='git log --pretty=short --graph --oneline'
+alias stt='git status -uno'
 
 # その他エイリアス
+alias best='cd ~/Desktop/BEST10-iOS/;open Best10.xcworkspace'
+alias catz='cat ~/.zshrc'
+alias dc='docker-compose'
 alias de='cd Desktop'
-alias vzsh='vim ~/.zshrc'
+alias denasakura='ssh dena@153.121.70.114'
+alias ll='ls -l'
+alias nginxtail='tail -f /var/log/nginx/access.log'
 alias pos='pg_ctl -D /usr/local/var/postgres -l /usr/local/var/postgres/server.log start'
 alias postop='pg_ctl -D /usr/local/var/postgres/ -l /usr/local/var/postgres/server.log stop'
-alias sb='subl'
-alias catz='cat ~/.zshrc'
-alias nginxtail='tail -f /var/log/nginx/access.log'
-alias ll='ls -l'
-alias best='cd ~/Desktop/BEST10-iOS/;open Best10.xcworkspace'
 alias sakura='ssh timakin@153.121.70.114'
-alias denasakura='ssh dena@153.121.70.114'
+alias sb='subl'
 alias shellreboot='exec ${SHELL} -l'
-alias dc='docker-compose'
-
-# bundler
-alias gb='gem build'
-alias guni='gem uninstall'
-alias gi='gem install'
+alias vzsh='vim ~/.zshrc'
 
 # zaw setting
 source ~/zsh_plugins/zaw/zaw.zsh
@@ -130,7 +129,6 @@ export PATH="/usr/local/heroku/bin:$PATH"
 alias gomongo='mongod -dbpath /usr/local/var/mongodb'
 
 ### pipsi
-export PATH=~/.local/bin:$PATH
 
 ### docker setting
 export DOCKER_HOST=tcp://192.168.59.103:2376
