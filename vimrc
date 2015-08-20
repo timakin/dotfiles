@@ -1,23 +1,71 @@
+""""""""""""""""
+""デフォルトエンコード
 scriptencoding utf-8
-set nocompatible
+""""""""""""""""
+
+""""""""""""""""
+""行番号の表示
 set number
-set autoindent
+""""""""""""""""
+
+""""""""""""""""
+""インクリメンタルサーチ（文字入力されるたび絞り込んで検索）有効化
 set incsearch
+""""""""""""""""
+
+""""""""""""""""
+"":viした時にファイル名補完
 set wildmenu
+""""""""""""""""
+
+""""""""""""""""
+""マウス有効化""
 set mouse=a
 set ttymouse=xterm2
-set tabstop=2
+""""""""""""""""
+
+""""""""""""""""
+""インデント幅の調整
+set tabstop=4
+set tabstop=4
 set expandtab
-set shiftwidth=2
+set shiftwidth=4
+set softtabstop=4
+""""""""""""""""
+
+""""""""""""""""
+""改行時にインデント自動調整
+set autoindent
+""""""""""""""""
+
+""""""""""""""""
+""行をまたいで移動
+set nocompatible
 set whichwrap=b,s,<,>,[,]
+""""""""""""""""
+
+""""""""""""""""
+""見た目を調整
 set background=dark
 let g:solarized_termcolors = 256
+""""""""""""""""
 
+""""""""""""""""
+""Vim起動時に実行
 if has('vim_starting')
+  
+  """"""""""""""""  
+  ""ファイルタイプに変更があった時、インデントやそれ用のプラグインの読み込みを行わない
   filetype plugin off
   filetype indent off
+  """"""""""""""""
+
+  """"""""""""""""
+  ""NeoBundlePluginを起動時に読み込み
   execute 'set runtimepath+=' . expand('~/.vim/bundle/neobundle.vim')
+  """"""""""""""""
 endif
+""""""""""""""""
 
 call neobundle#begin(expand('~/.vim/bundle'))
 NeoBundle 'mattn/benchvimrc-vim'
@@ -111,11 +159,20 @@ endif
 
 NeoBundle 'vim-scripts/taglist.vim'
 NeoBundle 'szw/vim-tags'
+NeoBundle 'tpope/vim-fugitive'
+let g:tlist_javascript_settings = 'javascript;c:class;m:method;f:function;p:property'
 
+""""""""""""""""
+""Ctrl+nで複数選択
 NeoBundle 'terryma/vim-multiple-cursors'
+""""""""""""""""
 
+""""""""""""""""
+""Ctrl+iでファイル形式に応じてコードを実行する
 au FileType vim map <C-i>  :source %<CR>
 au FileType perl map <C-i>  :!perl %<CR>
 au FileType javascript map <C-i>  :!node %<CR>
 au FileType ruby map <C-i>  :!ruby %<CR>
 au FileType sh map <C-i>  :!sh %<CR>
+""""""""""""""""
+
