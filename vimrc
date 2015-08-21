@@ -69,11 +69,22 @@ endif
 """"""""""""""""
 
 call neobundle#begin(expand('~/.vim/bundle'))
+"" 自動補完。設定は後述。
 NeoBundle 'Shougo/neocomplcache.vim'
+
+"" :BenchVimrcで行単位に計測時間が表示される
 NeoBundle 'mattn/benchvimrc-vim'
+
+"" Ctrl+pで絞込み検索。
 NeoBundle 'git://github.com/kien/ctrlp.vim.git'
+
+"" NeoBundleそのもの
 NeoBundle 'git://github.com/Shougo/neobundle.vim.git'
+
+"" NERDTree
 NeoBundle 'git://github.com/scrooloose/nerdtree.git'
+
+"" emmetをvimで使えるようにする。<C-e>に改良
 NeoBundle 'mattn/emmet-vim'
 NeoBundle 'itchyny/lightline.vim'
 NeoBundle 'tpope/vim-surround'
@@ -270,3 +281,7 @@ au FileType ruby map <C-i>  :!ruby %<CR>
 au FileType sh map <C-i>  :!sh %<CR>
 """"""""""""""""
 
+""""""""""""""""
+"" emmetのコマンドの設定を変更
+let g:user_emmet_leader_key='<C-e>'
+""""""""""""""""
