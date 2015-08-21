@@ -19,7 +19,7 @@ set wildmenu
 """"""""""""""""
 
 """"""""""""""""
-""マウス有効化""
+"" マウス有効化
 set mouse=a
 set ttymouse=xterm2
 """"""""""""""""
@@ -122,9 +122,9 @@ NeoBundle 'kana/vim-smartchr'
 
 "" テキストオブジェクト（スニペット的なやつを呼び出すコマンド）を作れる
 NeoBundle 'kana/vim-textobj-user'
-NeoBundle 'juvenn/mustache.vim'
-NeoBundle 'nathanaelkane/vim-indent-guides'
-NeoBundle 'kana/vim-submode'
+NeoBundle 'kana/vim-textobj-indent'
+
+
 NeoBundle 'thinca/vim-poslist'
 NeoBundle 'thinca/vim-visualstar'
 NeoBundle 'Lokaltog/vim-easymotion'
@@ -137,7 +137,6 @@ NeoBundle 'ujihisa/neco-ghc'
 NeoBundle 'dag/vim2hs'
 NeoBundle 'pbrisbin/html-template-syntax'
 NeoBundle 'tyru/open-browser.vim'
-NeoBundle 'kana/vim-textobj-indent'
 NeoBundle 'godlygeek/tabular'
 NeoBundle 'scrooloose/syntastic'
 
@@ -314,6 +313,14 @@ au FileType sh map <C-i>  :!sh %<CR>
 """"""""""""""""
 
 """"""""""""""""
+"" かっこと改行を自動挿入
+inoremap {<Enter> {}<Left><CR><ESC><S-o>
+inoremap [<Enter> []<Left><CR><ESC><S-o>
+inoremap (<Enter> ()<Left><CR><ESC><S-o> */
+""""""""""""""""
+
+""""""""""""""""
 "" emmetのコマンドの設定を変更
 let g:user_emmet_leader_key='<C-e>'
 """"""""""""""""
+
