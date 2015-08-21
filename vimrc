@@ -84,26 +84,44 @@ NeoBundle 'git://github.com/Shougo/neobundle.vim.git'
 "" NERDTree
 NeoBundle 'git://github.com/scrooloose/nerdtree.git'
 
-"" emmetをvimで使えるようにする。<C-e>に改良
+"" emmetをvimで使えるようにする。<C-e>+,に改良。ダッシュが必要
 NeoBundle 'mattn/emmet-vim'
+
+"" 下側に色づけされたディレクトリとかブランチ名が出る
 NeoBundle 'itchyny/lightline.vim'
+
+"" 選択中にShift+Sを押した後、'や"などで選択範囲を囲める 
 NeoBundle 'tpope/vim-surround'
+
+"" カラースキーム
 NeoBundle 'altercation/vim-colors-solarized'
 NeoBundle 'baskerville/bubblegum'
 NeoBundle 'nanotech/jellybeans.vim'
 NeoBundle 'w0ng/vim-hybrid'
 NeoBundle 'vim-scripts/twilight'
 NeoBundle 'jonathanfilip/vim-lucius'
+
+"" ,,のコンマダブルでコメントアウト
 NeoBundle 'scrooloose/nerdcommenter'
+
+"" ファイル検索の効率化
+NeoBundle 'vim-scripts/FuzzyFinder'
 NeoBundle 'vim-scripts/L9'
+
+"" :Grepでファイル内検索
 NeoBundle 'vim-scripts/grep.vim'
+
+"" :e sudo:./zshrcとかで、任意のファイルをsudoで扱える
 NeoBundle 'vim-scripts/sudo.vim'
+
+"" vimでANSIカラーに対応
 NeoBundle 'vim-scripts/AnsiEsc.vim'
+
+"" タイプ回数によって同じ文字でも入力をかえる
 NeoBundle 'kana/vim-smartchr'
+
+"" テキストオブジェクト（スニペット的なやつを呼び出すコマンド）を作れる
 NeoBundle 'kana/vim-textobj-user'
-NeoBundle 'motemen/hatena-vim'
-NeoBundle 'kchmck/vim-coffee-script'
-NeoBundle 'carlosvillu/coffeScript-VIM-Snippets'
 NeoBundle 'juvenn/mustache.vim'
 NeoBundle 'nathanaelkane/vim-indent-guides'
 NeoBundle 'kana/vim-submode'
@@ -122,6 +140,8 @@ NeoBundle 'tyru/open-browser.vim'
 NeoBundle 'kana/vim-textobj-indent'
 NeoBundle 'godlygeek/tabular'
 NeoBundle 'scrooloose/syntastic'
+
+"" :Agでファイルを横断検索、選択して開けたりもする
 NeoBundle 'rking/ag.vim'
 NeoBundle 'moro/vim-review'
 NeoBundle 'bling/vim-airline'
@@ -145,12 +165,25 @@ NeoBundle 'Rip-Rip/clang_complete'
 NeoBundle 'szw/vim-tags'
 call neobundle#end()
 
+"""""""""""""""""
+"" NERDCommenter
+let NERDSpaceDelims = 1
+nmap ,, <Plug>NERDCommenterToggle
+vmap ,, <Plug>NERDCommenterToggle
+"""""""""""""""""
 
 """""""""""""""""
 "" NERDTree（左側のディレクトリツリー表示）
 autocmd VimEnter * NERDTree  
 """""""""""""""""
 
+
+"""""""""""""""""
+"" lightlineのカラースキームを変更
+let g:lightline = {
+      \ 'colorscheme': 'wombat',
+      \ }
+"""""""""""""""""
 
 """""""""""""""""
 "" シンタックスハイライト
@@ -162,7 +195,6 @@ syntax on
 "" クリップボードにコピーしたテキストを保存
 set clipboard=unnamed
 """""""""""""""""
-
 
 "" 以下はNeoCompleteの設定。READMEのexampleそのまま。
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
