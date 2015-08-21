@@ -1,7 +1,3 @@
-# mysql
-alias startms='/usr/local/bin/mysqld'
-alias mslogin='mysql -u root -p'
-
 # Path Setting
 export MANPATH=/opt/local/man:$MANPATH
 export PATH=$PATH:/usr/local/bin/mysql
@@ -9,7 +5,6 @@ export PATH=/opt/local/bin:/opt/local/sbin/:$PATH
 export PATH=~/.local/bin:$PATH
 export PKG_CONFIG_PATH=/usr/local/lib/pkgconfig
 
-export GUARD_GEM_SILENCE_DEPRECATIONS=1
 # 色についての設定
 autoload colors
 colors
@@ -17,6 +12,7 @@ export LSCOLORS=gxfxxxxxcxxxxxxxxxgxgx
 export LS_COLORS='di=01;36:ln=01;35:ex=01;32'
 zstyle ':completion:*' list-colors 'di=36' 'ln=35' 'ex=32'
 
+# プロンプトの表示を変更する。
 autoload -Uz vcs_info
 zstyle ':vcs_info:*' formats ':(%s)%b'
 zstyle ':vcs_info:*' actionformats ':(%s)%b|%a'
@@ -25,7 +21,7 @@ precmd () {
   LANG=en_US.UTF-8 vcs_info
   [[ -n "$vcs_info_msg_0_" ]] && psvar[1]="$vcs_info_msg_0_"
 }
-PROMPT="%{${fg[yellow]}%}[%n@%~%1(v|%F{green}%1v%f|)%{${fg[yellow]}%}]%{${reset_color}%}%b "
+PROMPT="%{${fg[yellow]}%}╭( ･ㅂ･)و [%n@%~%1(v|%F{green}%1v%f|)%{${fg[yellow]}%}]%{${reset_color}%}%b "
 
 # 自動補完
 autoload -U compinit
@@ -104,7 +100,6 @@ source ~/zsh_plugins/zaw/zaw.zsh
 bindkey '^[d' zaw-cdr
 bindkey '^[g' zaw-git-branches
 bindkey '^[@' zaw-gitdir
-
 function zaw-src-gitdir () {
   _dir=$(git rev-parse --show-cdup 2>/dev/null)
   if [ $? -eq 0 ]
@@ -115,7 +110,6 @@ function zaw-src-gitdir () {
   actions=("zaw-src-gitdir-cd")
   act_descriptions=("change directory in git repos")
 }
-
 function zaw-src-gitdir-cd () {
   BUFFER="cd $1"
   zle accept-line
@@ -128,7 +122,9 @@ export PATH="/usr/local/heroku/bin:$PATH"
 ### mongo start
 alias gomongo='mongod -dbpath /usr/local/var/mongodb'
 
-### pipsi
+# mysql
+alias startms='/usr/local/bin/mysqld'
+alias mslogin='mysql -u root -p'
 
 ### docker setting
 export DOCKER_HOST=tcp://192.168.59.103:2376
