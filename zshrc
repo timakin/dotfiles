@@ -51,7 +51,7 @@ alias union='bundle exec unicorn_rails -E production -c config/unicorn.rb'
 
 # python
 alias supy="sudo python"
-alias ip='ipython'
+alias ipy='ipython'
 
 # ruby
 alias use193="rvm use ruby-1.9.3-p327"
@@ -129,7 +129,7 @@ alias mslogin='mysql -u root -p'
 ### docker setting
 export DOCKER_HOST=tcp://192.168.59.103:2376
 export DOCKER_TLS_VERIFY=1
-export DOCKER_CERT_PATH=/Users/seiji.takahashi/.boot2docker/certs/boot2docker-vm
+export DOCKER_CERT_PATH=/Users/takahashiseiji/.boot2docker/certs/boot2docker-vm
 alias b2d='boot2docker'
 
 ### sublime
