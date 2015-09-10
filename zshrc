@@ -27,6 +27,9 @@ PROMPT="%{${fg[yellow]}%}╭( ･ㅂ･)و [%n@%~%1(v|%F{green}%1v%f|)%{${fg[yel
 autoload -U compinit
 compinit
 
+# コマンドラインで記号の入力を許可する
+setopt nonomatch
+
 # コマンドの履歴
 HISTSIZE=10000
 SAVEHIST=10000
@@ -129,7 +132,7 @@ alias mslogin='mysql -u root -p'
 ### docker setting
 export DOCKER_HOST=tcp://192.168.59.103:2376
 export DOCKER_TLS_VERIFY=1
-export DOCKER_CERT_PATH=/Users/takahashiseiji/.boot2docker/certs/boot2docker-vm
+export DOCKER_CERT_PATH=/Users/seiji.takahashi/.boot2docker/certs/boot2docker-vm
 alias b2d='boot2docker'
 
 ### sublime

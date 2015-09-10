@@ -67,6 +67,26 @@ if has('vim_starting')
 endif
 """"""""""""""""
 
+""""""""""""""""
+
+" syntastic導入用
+" まずこれを実行
+" mkdir -p ~/.vim/autoload ~/.vim/bundle && \
+" curl -LSso ~/.vim/autoload/pathogen.vim https://tpo.pe/pathogen.vim
+" cd ~/.vim/bundle && \
+" git clone https://github.com/scrooloose/syntastic.git
+execute pathogen#infect()
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+
+""""""""""""""""
+
 call neobundle#begin(expand('~/.vim/bundle'))
 "" :BenchVimrcで行単位に計測時間が表示される
 NeoBundle 'mattn/benchvimrc-vim'
@@ -129,6 +149,7 @@ NeoBundle 'dag/vim2hs'
 NeoBundle 'pbrisbin/html-template-syntax'
 NeoBundle 'tyru/open-browser.vim'
 NeoBundle 'godlygeek/tabular'
+"" シンタックスチェック 
 NeoBundle 'scrooloose/syntastic'
 
 "" :Agでファイルを横断検索、選択して開けたりもする
