@@ -106,6 +106,10 @@ alias less='less -R'                                         # Color escape sequ
 alias L='less'
 alias P='peco'
 
+function agp() {
+    ag $@ | P
+}
+
 # zaw setting
 source ~/zsh_plugins/zaw/zaw.zsh
 bindkey '^[d' zaw-cdr
