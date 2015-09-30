@@ -177,7 +177,7 @@ syntax on
 
 """""""""""""""""
 "" クリップボードにコピーしたテキストを保存
-set clipboard=unnamed
+set clipboard=unnamed,autoselect
 """""""""""""""""
 
 """"""""""""""""

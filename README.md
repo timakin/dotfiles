@@ -26,7 +26,11 @@
 - neobundle
 - zsh(chshも)
 - oh-my-zsh
+- peco
 
+```
+https://github.com/peco/peco
+```
 
 - zaw
 
@@ -34,4 +38,11 @@
 mkdir ~/zsh_plugins
 cd zsh_plugins
 git clone git://github.com/zsh-users/zaw.git
+```
+
+- vim clipboard
+
+```
+sudo port deactivate vim
+sudo port install vim +clipboard
 ```
