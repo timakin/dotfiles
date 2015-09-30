@@ -19,6 +19,10 @@ set wildmenu
 """"""""""""""""
 
 """"""""""""""""
+set backspace=indent,eol,start
+""""""""""""""""
+
+""""""""""""""""
 "" マウス有効化
 set mouse=a
 set ttymouse=xterm2

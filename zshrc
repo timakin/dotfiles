@@ -98,6 +98,13 @@ alias sakura='ssh timakin@153.121.70.114'
 alias sb='subl'
 alias shellreboot='exec ${SHELL} -l'
 alias vzsh='vim ~/.zshrc'
+alias ls='ls -G'                                             # Show [/*@], Enable color
+alias mv='mv -i'                                             # Comfirm overwrite
+alias cp='cp -i'                                             # Comfirm overwrite
+alias diff='diff --strip-trailing-cr'
+alias less='less -R'                                         # Color escape sequences will displayed
+alias L='less'
+alias P='peco'
 
 # zaw setting
 source ~/zsh_plugins/zaw/zaw.zsh
@@ -135,6 +142,23 @@ export DOCKER_HOST=tcp://192.168.59.103:2376
 export DOCKER_TLS_VERIFY=1
 export DOCKER_CERT_PATH=/Users/seiji.takahashi/.boot2docker/certs/boot2docker-vm
 alias b2d='boot2docker'
+
+### history search with peco
+function peco-select-history() {
+    local tac
+    if which tac > /dev/null; then
+        tac="tac"
+    else
+        tac="tail -r"
+    fi
+    BUFFER=$(history -n 1 | \
+        eval $tac | \
+        peco --query "$LBUFFER")
+    CURSOR=$#BUFFER
+    zle clear-screen
+}
+zle -N peco-select-history
+bindkey '^r' peco-select-history
 
 ### sublime
 export PATH="/Applications/Sublime Text 2.app/Contents/SharedSupport/bin:$PATH"
