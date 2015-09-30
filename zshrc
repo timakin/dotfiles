@@ -4,6 +4,8 @@ export PATH=$PATH:/usr/local/bin/mysql
 export PATH=/opt/local/bin:/opt/local/sbin/:$PATH
 export PATH=~/.local/bin:$PATH
 export PKG_CONFIG_PATH=/usr/local/lib/pkgconfig
+export GOPATH=$HOME/go
+export PATH=$PATH:$GOPATH/bin
 
 # 色についての設定
 autoload colors

@@ -46,3 +46,10 @@ git clone git://github.com/zsh-users/zaw.git
 sudo port deactivate vim
 sudo port install vim +clipboard
 ```
+
+- gof(Fuzzy finder)
+
+```
+go get github.com/mattn/gof
+```
+
