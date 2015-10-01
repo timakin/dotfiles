@@ -113,6 +113,18 @@ function agp() {
     ag $@ | P
 }
 
+function peco-cd() {
+    local n="1"
+    if [ $# -eq "1" ]; then
+      n=$1
+    fi
+    local dir="$( find . -maxdepth $n -type d | sed -e 's;\./;;' | peco )"
+    if [ ! -z "$dir" ] ; then
+        cd "$dir"
+    fi
+}
+alias pcd='peco-cd'
+
 function vimg() {
     vim $(gof)
 }
