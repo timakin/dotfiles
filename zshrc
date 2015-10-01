@@ -125,6 +125,16 @@ function peco-cd() {
 }
 alias pcd='peco-cd'
 
+function peco-kill() {
+ kill `ps aux | peco | awk '{print $2}'`
+}
+
+function peco-kill-kill() {
+ kill -KILL `ps aux | peco | awk '{print $2}'`
+}
+alias killP='peco-kill'
+alias killP9='peco-kill-kill'
+
 function vimg() {
     vim $(gof)
 }
