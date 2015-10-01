@@ -98,7 +98,7 @@ alias pos='pg_ctl -D /usr/local/var/postgres -l /usr/local/var/postgres/server.l
 alias postop='pg_ctl -D /usr/local/var/postgres/ -l /usr/local/var/postgres/server.log stop'
 alias sakura='ssh timakin@153.121.70.114'
 alias sb='subl'
-alias shellreboot='exec ${SHELL} -l'
+alias shreboot='exec ${SHELL} -l'
 alias vzsh='vim ~/.zshrc'
 alias ls='ls -G'                                             # Show [/*@], Enable color
 alias mv='mv -i'                                             # Comfirm overwrite
@@ -110,6 +110,10 @@ alias P='peco'
 
 function agp() {
     ag $@ | P
+}
+
+function vimg() {
+    vim $(gof)
 }
 
 # zaw setting
