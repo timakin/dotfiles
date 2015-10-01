@@ -98,7 +98,7 @@ alias pos='pg_ctl -D /usr/local/var/postgres -l /usr/local/var/postgres/server.l
 alias postop='pg_ctl -D /usr/local/var/postgres/ -l /usr/local/var/postgres/server.log stop'
 alias sakura='ssh timakin@153.121.70.114'
 alias sb='subl'
-alias shellreboot='exec ${SHELL} -l'
+alias shboot='exec ${SHELL} -l'
 alias vzsh='vim ~/.zshrc'
 alias ls='ls -G'                                             # Show [/*@], Enable color
 alias mv='mv -i'                                             # Comfirm overwrite
@@ -108,6 +108,7 @@ alias less='less -R'                                         # Color escape sequ
 alias L='less'
 alias P='peco'
 
+# peco with ag
 function agp() {
     ag $@ | P
 }
@@ -138,6 +139,11 @@ export PATH="/usr/local/heroku/bin:$PATH"
 
 ### mongo start
 alias gomongo='mongod -dbpath /usr/local/var/mongodb'
+
+### vim and gof
+function vimg() {
+    vim $(gof)
+}
 
 # mysql
 alias startms='/usr/local/bin/mysqld'
