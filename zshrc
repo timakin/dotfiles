@@ -113,6 +113,10 @@ function agp() {
     ag $@ | P
 }
 
+function vimg() {
+    vim $(gof)
+}
+
 # zaw setting
 source ~/zsh_plugins/zaw/zaw.zsh
 bindkey '^[d' zaw-cdr
