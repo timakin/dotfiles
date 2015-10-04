@@ -164,6 +164,11 @@ NeoBundleLazy 'Shougo/unite.vim', {
       \}
 NeoBundle 'Shougo/neosnippet'
 NeoBundle 'Shougo/neosnippet-snippets'
+
+"" file_mru使うためのやつ
+NeoBundle 'Shougo/neomru.vim'
+NeoBundle 'Shougo/vimproc.vim'
+
 NeoBundle 'Rip-Rip/clang_complete'
 NeoBundle 'szw/vim-tags'
 call neobundle#end()
@@ -238,14 +243,44 @@ nnoremap sL <C-w>L
 nnoremap sH <C-w>H
 
 "" set paste
-nnoremap paste :set paste
+nnoremap paste <C-u>:set paste<CR>
 
 "" 画面分割、幅調整など
-nnoremap st :<C-u>tabnew<CR>
+nnoremap st :<C-u>tabnew<CR>:NERDTree<CR>
 nnoremap sn gt
 nnoremap sp gT
-nnoremap sb :<C-u>Unite buffer_tab -buffer-name=file<CR>
-nnoremap sB :<C-u>Unite buffer -buffer-name=file<CR>
+nnoremap ag :Ag 
 nnoremap sq :<C-u>q<CR>
 nnoremap sQ :<C-u>bd<CR>
+""""""""""""""""
+
+""""""""""""""""
+"" unite関連
+call unite#filters#matcher_default#use(['matcher_fuzzy'])
+call unite#custom#source('file_rec/async', 'ignore_pattern', '\(png\|gif\|jpeg\|jpg\)$')
+let g:unite_source_rec_max_cache_files = 5000
+nnoremap ub :<C-u>Unite buffer_tab -buffer-name=file<CR>
+nnoremap uB :<C-u>Unite buffer -buffer-name=file<CR>
+nnoremap uf :<C-u>Unite file<CR>
+nnoremap uF :<C-u>Unite file_mru<CR>
+
+"" <tab>deep<enter>で、特定のディレクトリから先がfile_recになる
+let s:unite_action_rec = {}
+
+function! s:unite_action_rec.func(candidate)
+  call unite#start([['file_rec', a:candidate.action__path]])
+  endfunction
+
+  call unite#custom_action('directory', 'deep', s:unite_action_rec)
+  unlet! s:unite_action_rec
+""""""""""""""""
+
+""""""""""""""""
+"" NERDTREE
+nnoremap nt :<C-u>NERDTree<CR>
+""""""""""""""""
+
+""""""""""""""""
+"" NeoBundle省略
+nnoremap nbi :NeoBundleInstall
 """"""""""""""""
