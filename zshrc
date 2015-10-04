@@ -27,7 +27,7 @@ PROMPT="%{${fg[yellow]}%}╭( ･ㅂ･)و [%n@%~%1(v|%F{green}%1v%f|)%{${fg[yel
 
 # 自動補完
 autoload -U compinit
-compinit
+compinit -C
 
 # コマンドラインで記号の入力を許可する
 setopt nonomatch
@@ -199,4 +199,9 @@ zle -N peco-select-history
 bindkey '^r' peco-select-history
 
 ### sublime
-export PATH="/Applications/Sublime Text 2.app/Contents/SharedSupport/bin:$PATH"
+export PATH="/Applications/Sublime Text 3.app/Contents/SharedSupport/bin:$PATH"
+
+# zprof bench marking
+if (which zprof > /dev/null) ;then
+  zprof | less
+fi
