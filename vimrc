@@ -284,3 +284,14 @@ nnoremap nt :<C-u>NERDTree<CR>
 "" NeoBundle省略
 nnoremap nbi :NeoBundleInstall
 """"""""""""""""
+
+
+""""""""""""""""
+"" 移動を早める
+noremap z<Left> ^
+noremap z<Right> $
+noremap z<Up> gg
+noremap z<Down> G
+""""""""""""""""
+
+
