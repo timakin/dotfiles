@@ -287,11 +287,17 @@ nnoremap nbi :NeoBundleInstall
 
 
 """"""""""""""""
-"" 移動を早める
+"" カーソル移動を早める
 noremap z<Left> ^
 noremap z<Right> $
 noremap z<Up> gg
 noremap z<Down> G
 """"""""""""""""
 
-
+""""""""""""""""
+"" ウィンドウ移動を早める
+nnoremap s<Right> <C-w>l
+nnoremap s<Left> <C-w>h
+nnoremap s<Up> <C-w>k
+nnoremap s<Down> <C-w>j
+""""""""""""""""
