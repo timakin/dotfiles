@@ -176,11 +176,21 @@ alias startms='/usr/local/bin/mysqld'
 alias mslogin='mysql -u root -p'
 
 ### docker setting
-export DOCKER_HOST=tcp://192.168.59.103:2376
-export DOCKER_TLS_VERIFY=1
-export DOCKER_CERT_PATH=/Users/seiji.takahashi/.boot2docker/certs/boot2docker-vm
-alias b2d='boot2docker'
+if [ -e /Users/seiji.takahashi ] ; then
+    export DOCKER_HOST=tcp://192.168.59.103:2376
+    export DOCKER_TLS_VERIFY=1
+    export DOCKER_CERT_PATH=/Users/seiji.takahashi/.boot2docker/certs/boot2docker-vm
+elif [ -e /Users/takahashiseiji ] ; then
+    eval "$(docker-machine env sacket)"
+fi
 
+alias b2d='boot2docker'
+alias dm='docker-machine'
+alias dmenv='eval "$(docker-machine env sacket)"'
+alias drm='docker rm $(docker ps -a --filter "status=exited" -q)'
+function drmi() {
+    docker rmi $(docker images -a | awk '/^<none>/ { print $3 }')
+}
 ### history search with peco
 function peco-select-history() {
     local tac

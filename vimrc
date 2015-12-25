@@ -127,6 +127,10 @@ NeoBundle 'kana/vim-smartchr'
 NeoBundle 'kana/vim-textobj-user'
 NeoBundle 'kana/vim-textobj-indent'
 
+"" Goのシンタックス有効
+NeoBundleLazy 'fatih/vim-go', {
+    \ 'autoload' : { 'filetypes' : 'go'  }
+    \ }
 
 NeoBundle 'thinca/vim-poslist'
 NeoBundle 'thinca/vim-visualstar'
