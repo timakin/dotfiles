@@ -86,6 +86,12 @@ NeoBundle 'mattn/benchvimrc-vim'
 "" Ctrl+pで絞込み検索。
 NeoBundle 'git://github.com/kien/ctrlp.vim.git'
 
+"" 上記を並列処理で高速化
+NeoBundle 'nixprime/cpsm'
+
+"" ctrl+Pマッチャーを事前に走らせとく
+" "let g:ctrlp_match_func = {'match': 'cpsm#CtrlPMatch'}
+
 "" NeoBundleそのもの
 NeoBundle 'git://github.com/Shougo/neobundle.vim.git'
 
@@ -132,11 +138,33 @@ NeoBundleLazy 'fatih/vim-go', {
     \ 'autoload' : { 'filetypes' : 'go'  }
     \ }
 
-NeoBundle 'thinca/vim-poslist'
+"" Markdown対応とプレビュー可能にする
+NeoBundle 'plasticboy/vim-markdown'
+NeoBundle 'kannokanno/previm'
+NeoBundle 'tyru/open-browser.vim'
+
+"" Visual Modeで*を押すと、文字の検索ができる
 NeoBundle 'thinca/vim-visualstar'
-NeoBundle 'Lokaltog/vim-easymotion'
+
+"" 特定の文字をキー一つで入れ替えられる
 NeoBundle 'taku-o/vim-toggle'
+
+"" ctangsで付与されたtagの一覧を表示できる
 NeoBundle 'majutsushi/tagbar'
+
+"" シンタックスチェック 
+NeoBundle 'scrooloose/syntastic'
+
+"" :Agでファイルを横断検索、選択して開けたりもする
+NeoBundle 'rking/ag.vim'
+
+"" file_mru使うためのやつ
+NeoBundle 'Shougo/neomru.vim'
+
+"" ctags有効化。C+]でジャンプ。
+NeoBundle 'szw/vim-tags'
+
+
 NeoBundle 'thinca/vim-qfreplace'
 NeoBundle 'mattn/webapi-vim'
 NeoBundle 'eagletmt/ghcmod-vim'
@@ -145,11 +173,6 @@ NeoBundle 'dag/vim2hs'
 NeoBundle 'pbrisbin/html-template-syntax'
 NeoBundle 'tyru/open-browser.vim'
 NeoBundle 'godlygeek/tabular'
-"" シンタックスチェック 
-NeoBundle 'scrooloose/syntastic'
-
-"" :Agでファイルを横断検索、選択して開けたりもする
-NeoBundle 'rking/ag.vim'
 NeoBundle 'moro/vim-review'
 NeoBundle 'bling/vim-airline'
 NeoBundle 'basyura/bitly.vim'
@@ -169,19 +192,24 @@ NeoBundleLazy 'Shougo/unite.vim', {
 NeoBundle 'Shougo/neosnippet'
 NeoBundle 'Shougo/neosnippet-snippets'
 
-"" file_mru使うためのやつ
-NeoBundle 'Shougo/neomru.vim'
 NeoBundle 'Shougo/vimproc.vim'
 
 NeoBundle 'Rip-Rip/clang_complete'
-NeoBundle 'szw/vim-tags'
+
 call neobundle#end()
+
+
 
 """""""""""""""""
 "" NERDCommenter
 let NERDSpaceDelims = 1
 nmap ,, <Plug>NERDCommenterToggle
 vmap ,, <Plug>NERDCommenterToggle
+"""""""""""""""""
+
+"""""""""""""""""
+"" tagbar
+nmap tB :TagbarToggle<CR>
 """""""""""""""""
 
 """""""""""""""""
@@ -214,12 +242,14 @@ NeoBundle 'terryma/vim-multiple-cursors'
 """"""""""""""""
 
 """"""""""""""""
-""Ctrl+iでファイル形式に応じてコードを実行する
+"" Ctrl+iでファイル形式に応じてコードを実行する
+"" markdownファイルはプレビュー画面をオープンする
 au FileType vim map <C-i>  :source %<CR>
 au FileType perl map <C-i>  :!perl %<CR>
 au FileType javascript map <C-i>  :!node %<CR>
 au FileType ruby map <C-i>  :!ruby %<CR>
 au FileType sh map <C-i>  :!sh %<CR>
+au FileType markdown map <C-i> :PrevimOpen <CR>
 """"""""""""""""
 
 """"""""""""""""
@@ -304,4 +334,9 @@ nnoremap s<Right> <C-w>l
 nnoremap s<Left> <C-w>h
 nnoremap s<Up> <C-w>k
 nnoremap s<Down> <C-w>j
+""""""""""""""""
+
+""""""""""""""""
+"" .mdの拡張子のファイルをmarkdownファイルとして扱う
+au BufRead,BufNewFile *.md set filetype=markdown
 """"""""""""""""

@@ -53,3 +53,10 @@ sudo port install vim +clipboard
 go get github.com/mattn/gof
 ```
 
+- files(file listing)
+
+[fileめっちゃ早く一覧化する。-aオプションをつけて階層遡れる](https://github.com/mattn/files)
+
+```
+go get github.com/mattn/files
+```

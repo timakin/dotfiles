@@ -215,3 +215,15 @@ export PATH="/Applications/Sublime Text 3.app/Contents/SharedSupport/bin:$PATH"
 if (which zprof > /dev/null) ;then
   zprof | less
 fi
+
+# itamae-secret store value
+alias itamaes='itamae-secrets set --base=./secret'
+
+# ctags for Ruby project
+alias rtags='ctags --langmap=RUBY:.rb --exclude="*.js"  --exclude=".git*" -R .'
+
+# process listing
+alias psa='ps aux | grep '
+
+# shift to dotfiles dir
+alias dots='cd ~/dotfiles'
