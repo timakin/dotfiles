@@ -210,6 +210,7 @@ vmap ,, <Plug>NERDCommenterToggle
 """""""""""""""""
 "" tagbar
 nmap tB :TagbarToggle<CR>
+autocmd VimEnter * :TagbarToggle  
 """""""""""""""""
 
 """""""""""""""""
