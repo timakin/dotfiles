@@ -85,6 +85,7 @@ alias gst='git status'
 alias gsts='git status --short'
 alias oneglog='git log --pretty=short --graph --oneline'
 alias stt='git status -uno'
+alias gs='git stash'
 
 # その他エイリアス
 alias best='cd ~/Desktop/BEST10-iOS/;open Best10.xcworkspace'
