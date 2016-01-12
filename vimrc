@@ -91,6 +91,8 @@ NeoBundle 'nixprime/cpsm'
 
 "" ctrl+Pマッチャーを事前に走らせとく
 " "let g:ctrlp_match_func = {'match': 'cpsm#CtrlPMatch'}
+let g:ctrlp_user_command = 'files -a %s'
+
 
 "" NeoBundleそのもの
 NeoBundle 'git://github.com/Shougo/neobundle.vim.git'
