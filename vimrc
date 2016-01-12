@@ -342,3 +342,21 @@ nnoremap s<Down> <C-w>j
 "" .mdの拡張子のファイルをmarkdownファイルとして扱う
 au BufRead,BufNewFile *.md set filetype=markdown
 """"""""""""""""
+
+"タブ、空白、改行の可視化
+set list
+set listchars=tab:>.,trail:_,extends:>,precedes:<,nbsp:%
+
+"全角スペースをハイライト表示
+function! ZenkakuSpace()
+    highlight ZenkakuSpace cterm=reverse ctermfg=DarkMagenta gui=reverse guifg=DarkMagenta
+endfunction
+   
+if has('syntax')
+    augroup ZenkakuSpace
+        autocmd!
+        autocmd ColorScheme       * call ZenkakuSpace()
+        autocmd VimEnter,WinEnter * match ZenkakuSpace /　/
+    augroup END
+    call ZenkakuSpace()
+endif
