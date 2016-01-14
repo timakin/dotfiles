@@ -64,8 +64,8 @@ let g:rehash256 = 1
 """"""""""""""""
 ""Vim起動時に実行
 if has('vim_starting')
-  
-  """"""""""""""""  
+
+  """"""""""""""""
   ""ファイルタイプに変更があった時、インデントやそれ用のプラグインの読み込みを行わない
   filetype plugin off
   filetype indent off
@@ -166,6 +166,8 @@ NeoBundle 'Shougo/neomru.vim'
 "" ctags有効化。C+]でジャンプ。
 NeoBundle 'szw/vim-tags'
 
+"" rubyのシンタックスハイライト等々
+NeoBundle 'vim-ruby/vim-ruby'
 
 NeoBundle 'thinca/vim-qfreplace'
 NeoBundle 'mattn/webapi-vim'
@@ -353,7 +355,7 @@ set listchars=tab:>.,trail:_,extends:>,precedes:<,nbsp:%
 function! ZenkakuSpace()
     highlight ZenkakuSpace cterm=reverse ctermfg=DarkMagenta gui=reverse guifg=DarkMagenta
 endfunction
-   
+
 if has('syntax')
     augroup ZenkakuSpace
         autocmd!
@@ -362,3 +364,5 @@ if has('syntax')
     augroup END
     call ZenkakuSpace()
 endif
+
+
