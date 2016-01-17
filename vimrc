@@ -59,6 +59,8 @@ set whichwrap=b,s,<,>,[,]
 ""見た目を調整
 let g:solarized_termcolors = 256
 let g:rehash256 = 1
+set background=dark
+"" colorscheme base16-duotone-darkspace
 """"""""""""""""
 
 """"""""""""""""
@@ -90,7 +92,7 @@ NeoBundle 'git://github.com/kien/ctrlp.vim.git'
 NeoBundle 'nixprime/cpsm'
 
 "" ctrl+Pマッチャーを事前に走らせとく
-" "let g:ctrlp_match_func = {'match': 'cpsm#CtrlPMatch'}
+"" let g:ctrlp_match_func = {'match': 'cpsm#CtrlPMatch'}
 let g:ctrlp_user_command = 'files -a %s'
 
 
@@ -367,3 +369,6 @@ endif
 
 " tagsジャンプの時に複数ある時は一覧表示
 nnoremap <C-]> g<C-]>
+
+" ctrlP終了時にキャッシュクリアしない
+let g:ctrlp_clear_cache_on_exit = 0

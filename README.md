@@ -60,3 +60,10 @@ go get github.com/mattn/gof
 ```
 go get github.com/mattn/files
 ```
+
+- Duotone colors
+
+```
+cd ~/.vim/bundle
+git clone https://github.com/atelierbram/vim-colors_duotones.git
+```
