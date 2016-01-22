@@ -136,6 +136,10 @@ function peco-kill-kill() {
 alias killP='peco-kill'
 alias killP9='peco-kill-kill'
 
+function ggg() {
+    "ghq get git@github.com:$1/$2"
+}
+
 function vimg() {
     vim $(gof)
 }

@@ -67,3 +67,10 @@ go get github.com/mattn/files
 cd ~/.vim/bundle
 git clone https://github.com/atelierbram/vim-colors_duotones.git
 ```
+
+- ghq
+
+```
+go get github.com/motemen/ghq
+git config --global ghq.root ~/src
+```
