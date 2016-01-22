@@ -213,6 +213,11 @@ function peco-select-history() {
 zle -N peco-select-history
 bindkey '^r' peco-select-history
 
+### replace words under current directory
+function greplace() {
+    find . -name ${3:-*} | xargs sed -i "" "s/$1/$2/g"
+}
+
 ### sublime
 export PATH="/Applications/Sublime Text 3.app/Contents/SharedSupport/bin:$PATH"
 
