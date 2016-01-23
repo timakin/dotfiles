@@ -136,9 +136,10 @@ function peco-kill-kill() {
 alias killP='peco-kill'
 alias killP9='peco-kill-kill'
 
-function ggg() {
-    "ghq get git@github.com:$1/$2"
+function ghq-get() {
+    eval "ghq get git@github.com:$1/$2"
 }
+alias ggg='ghq-get'
 
 function peco-src () {
   local selected_dir=$(ghq list -p | peco --query "$LBUFFER")

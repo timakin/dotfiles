@@ -244,8 +244,9 @@ let g:tlist_javascript_settings = 'javascript;c:class;m:method;f:function;p:prop
 """"""""""""""""
 
 """"""""""""""""
-""Ctrl+nで複数選択
+""Ctrl+fで複数選択
 NeoBundle 'terryma/vim-multiple-cursors'
+let g:multi_cursor_use_default_mapping=0
 let g:multi_cursor_next_key='<C-f>'
 """"""""""""""""
 
