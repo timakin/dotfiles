@@ -74,3 +74,12 @@ git clone https://github.com/atelierbram/vim-colors_duotones.git
 go get github.com/motemen/ghq
 git config --global ghq.root ~/src
 ```
+
+- s
+
+```
+go get -v github.com/zquestz/s
+cd $GOPATH/src/github.com/zquestz/s
+make
+make install
+```
