@@ -86,7 +86,7 @@ call neobundle#begin(expand('~/.vim/bundle'))
 NeoBundle 'mattn/benchvimrc-vim'
 
 "" Ctrl+pで絞込み検索。
-NeoBundle 'git://github.com/kien/ctrlp.vim.git'
+NeoBundle 'kien/ctrlp.vim'
 
 "" 上記を並列処理で高速化
 NeoBundle 'nixprime/cpsm'
@@ -97,10 +97,10 @@ let g:ctrlp_user_command = 'files -a %s'
 
 
 "" NeoBundleそのもの
-NeoBundle 'git://github.com/Shougo/neobundle.vim.git'
+NeoBundle 'Shougo/neobundle.vim'
 
 "" NERDTree
-NeoBundle 'git://github.com/scrooloose/nerdtree.git'
+NeoBundle 'scrooloose/nerdtree'
 
 "" emmetをvimで使えるようにする。<C-e>+,に改良。ダッシュが必要
 NeoBundle 'mattn/emmet-vim'
@@ -114,7 +114,7 @@ NeoBundle 'tpope/vim-surround'
 "" カラースキーム
 NeoBundle 'altercation/vim-colors-solarized'
 
-"" ,,のコンマダブルでコメントアウト
+"" ,,のコンマダブルでコメント
 NeoBundle 'scrooloose/nerdcommenter'
 
 "" ファイル検索の効率化
@@ -198,10 +198,14 @@ NeoBundleLazy 'Shougo/unite.vim', {
 NeoBundle 'Shougo/neosnippet'
 NeoBundle 'Shougo/neosnippet-snippets'
 
-NeoBundle 'Shougo/vimproc.vim'
+""NeoBundle 'Shougo/vimproc.vim'
 
 NeoBundle 'Rip-Rip/clang_complete'
+NeoBundle 'vim-scripts/taglist.vim'
+NeoBundle 'szw/vim-tags'
+NeoBundle 'tpope/vim-fugitive'
 
+NeoBundle 'terryma/vim-multiple-cursors'
 call neobundle#end()
 
 
@@ -237,15 +241,11 @@ set clipboard=unnamed,autoselect
 
 """"""""""""""""
 ""Ctrl+], Ctrl+^でtag移動できるCtags関連の設定
-NeoBundle 'vim-scripts/taglist.vim'
-NeoBundle 'szw/vim-tags'
-NeoBundle 'tpope/vim-fugitive'
 let g:tlist_javascript_settings = 'javascript;c:class;m:method;f:function;p:property'
 """"""""""""""""
 
 """"""""""""""""
 ""Ctrl+fで複数選択
-NeoBundle 'terryma/vim-multiple-cursors'
 let g:multi_cursor_use_default_mapping=0
 let g:multi_cursor_next_key='<C-f>'
 """"""""""""""""
