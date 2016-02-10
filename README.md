@@ -83,3 +83,9 @@ cd $GOPATH/src/github.com/zquestz/s
 make
 make install
 ```
+
+- diff-so-fancy
+
+```
+npm install -g diff-so-fancy
+```
