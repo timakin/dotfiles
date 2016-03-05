@@ -301,8 +301,8 @@ nnoremap sQ :<C-u>bd<CR>
 
 """"""""""""""""
 "" unite関連
-call unite#filters#matcher_default#use(['matcher_fuzzy'])
-call unite#custom#source('file_rec/async', 'ignore_pattern', '\(png\|gif\|jpeg\|jpg\)$')
+"" call unite#filters#matcher_default#use(['matcher_fuzzy'])
+"" //call unite#custom#source('file_rec/async', 'ignore_pattern', '\(png\|gif\|jpeg\|jpg\)$')
 let g:unite_source_rec_max_cache_files = 5000
 nnoremap ub :<C-u>Unite buffer_tab -buffer-name=file<CR>
 nnoremap uB :<C-u>Unite buffer -buffer-name=file<CR>
@@ -316,7 +316,7 @@ function! s:unite_action_rec.func(candidate)
   call unite#start([['file_rec', a:candidate.action__path]])
   endfunction
 
-  call unite#custom_action('directory', 'deep', s:unite_action_rec)
+""  call unite#custom_action('directory', 'deep', s:unite_action_rec)
   unlet! s:unite_action_rec
 """"""""""""""""
 
