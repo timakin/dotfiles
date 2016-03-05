@@ -268,5 +268,3 @@ alias psa='ps aux | grep '
 # shift to dotfiles dir
 alias dots='cd ~/dotfiles'
 
-export ERRBIT_HOST=https://sacket-errbit-staging.herokuapp.com
-export ERRBIT_PROJECT_KEY=7b67a2e914b746b23f0e48713e00e838
