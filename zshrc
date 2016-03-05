@@ -201,12 +201,31 @@ elif [ -e /Users/takahashiseiji ] ; then
 fi
 
 alias b2d='boot2docker'
-alias dm='docker-machine'
-alias dmenv='eval "$(docker-machine env sacket)"'
+
+# Docker
+alias d="docker"
+alias dc="docker-compose"
+if [ -s "/usr/local/bin/dinghy" ] ; then
+  alias dm="dinghy"
+  alias dm-start="dinghy start && eval \"\$(dinghy shellinit)\""
+  alias dm-restart="dinghy restart && eval \"\$(dinghy shellinit)\""
+  alias dm-env="eval \"\$(dinghy shellinit)\""
+else
+  alias dm="docker-machine"
+  alias dm-start="docker-machine start default && eval \"\$(docker-machine env default)\""
+  alias dm-restart="docker-machine restart default && eval \"\$(docker-machine env default)\""
+  alias dm-env="eval \"\$(docker-machine env default)\""
+fi
+
+if [ -s "/usr/local/bin/docker-machine" ] ; then
+  dm-env > /dev/null 2>&1
+fi
+
 alias drm='docker rm $(docker ps -a --filter "status=exited" -q)'
 function drmi() {
     docker rmi $(docker images -a | awk '/^<none>/ { print $3 }')
 }
+
 ### history search with peco
 function peco-select-history() {
     local tac
@@ -248,3 +267,6 @@ alias psa='ps aux | grep '
 
 # shift to dotfiles dir
 alias dots='cd ~/dotfiles'
+
+export ERRBIT_HOST=https://sacket-errbit-staging.herokuapp.com
+export ERRBIT_PROJECT_KEY=7b67a2e914b746b23f0e48713e00e838
