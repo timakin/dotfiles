@@ -248,6 +248,11 @@ function greplace() {
     find . -name ${3:-*} | xargs sed -i "" "s/$1/$2/g"
 }
 
+### port use check
+function pcheck() {
+    lsof -i:$1
+}
+
 ### sublime
 export PATH="/Applications/Sublime Text 3.app/Contents/SharedSupport/bin:$PATH"
 
