@@ -89,3 +89,9 @@ make install
 ```
 npm install -g diff-so-fancy
 ```
+
+- gocode
+
+```
+go get -u github.com/nsf/gocode
+```

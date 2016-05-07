@@ -141,6 +141,7 @@ NeoBundle 'kana/vim-textobj-indent'
 NeoBundleLazy 'fatih/vim-go', {
     \ 'autoload' : { 'filetypes' : 'go'  }
     \ }
+NeoBundle 'vim-jp/vim-go-extra'
 
 "" Markdown対応とプレビュー可能にする
 NeoBundle 'plasticboy/vim-markdown'
@@ -375,6 +376,9 @@ nnoremap <C-]> g<C-]>
 
 " ctrlP終了時にキャッシュクリアしない
 let g:ctrlp_clear_cache_on_exit = 0
+
+" vim-go
+let g:go_fmt_command = "goimports"
 
 """"""""""""""""""""""""""""
 "" NeoComplete関連

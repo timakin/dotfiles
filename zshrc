@@ -110,7 +110,7 @@ alias P='peco'
 
 # peco with ag
 function agp() {
-    ag $@ | P
+    ag $@ -l | P
 }
 
 function peco-cd() {
