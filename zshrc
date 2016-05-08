@@ -6,8 +6,8 @@ export PATH=~/.local/bin:$PATH
 export PKG_CONFIG_PATH=/usr/local/lib/pkgconfig
 export GOPATH=$HOME/go
 export PATH=$PATH:$GOPATH/bin
-export PATH=/bin:/usr/bin:/usr/local/bin:${PATH}
-export PATH=/usr/local/rvm/gems/ruby-2.3.0/bin
+export PATH=$PATH:/bin:/usr/bin:/usr/local/bin
+export PATH=$PATH:/usr/local/rvm/gems/ruby-2.3.0/bin
 
 # 色についての設定
 autoload colors
