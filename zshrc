@@ -274,3 +274,5 @@ alias psa='ps aux | grep '
 # shift to dotfiles dir
 alias dots='cd ~/dotfiles'
 
+# godep go alias
+alias god='godep go'
