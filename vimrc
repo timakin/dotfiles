@@ -223,7 +223,7 @@ vmap ,, <Plug>NERDCommenterToggle
 """""""""""""""""
 "" tagbar
 nmap tB :TagbarToggle<CR>
-autocmd VimEnter * :Tagbar
+"" autocmd VimEnter * :Tagbar
 """""""""""""""""
 
 """""""""""""""""
@@ -477,4 +477,3 @@ au BufWritePre *.go Fmt
 au BufNewFile,BufRead *.go set sw=4 noexpandtab ts=4 completeopt=menu,preview
 au FileType go compiler go
 " }}}
-}
