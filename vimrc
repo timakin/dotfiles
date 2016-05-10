@@ -223,7 +223,7 @@ vmap ,, <Plug>NERDCommenterToggle
 """""""""""""""""
 "" tagbar
 nmap tB :TagbarToggle<CR>
-"" autocmd VimEnter * :TagbarToggle  
+autocmd VimEnter * :Tagbar
 """""""""""""""""
 
 """""""""""""""""
@@ -298,6 +298,8 @@ nnoremap sp gT
 nnoremap ag :Ag 
 nnoremap sq :<C-u>q<CR>
 nnoremap sQ :<C-u>bd<CR>
+
+""
 """"""""""""""""
 
 """"""""""""""""
@@ -309,6 +311,7 @@ nnoremap ub :<C-u>Unite buffer_tab -buffer-name=file<CR>
 nnoremap uB :<C-u>Unite buffer -buffer-name=file<CR>
 nnoremap uf :<C-u>Unite file<CR>
 nnoremap uF :<C-u>Unite file_mru<CR>
+nnoremap uo :<C-u>Unite outline<CR>
 
 "" <tab>deep<enter>で、特定のディレクトリから先がfile_recになる
 let s:unite_action_rec = {}
@@ -460,3 +463,18 @@ endif
 " For perlomni.vim setting.
 " https://github.com/c9s/perlomni.vim
 let g:neocomplete#sources#omni#input_patterns.perl = '\h\w*->\h\w*\|\h\w*::'
+
+" syntastic for Go
+let g:syntastic_mode_map = { 'mode': 'passive',
+    \ 'active_filetypes': ['go'] }
+let g:syntastic_go_checkers = ['go', 'golint']
+
+
+" for golang {{{
+set path+=$GOPATH/src/**
+let g:gofmt_command = 'goimports'
+au BufWritePre *.go Fmt
+au BufNewFile,BufRead *.go set sw=4 noexpandtab ts=4 completeopt=menu,preview
+au FileType go compiler go
+" }}}
+}
