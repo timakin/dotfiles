@@ -380,8 +380,6 @@ nnoremap <C-]> g<C-]>
 " ctrlP終了時にキャッシュクリアしない
 let g:ctrlp_clear_cache_on_exit = 0
 
-" vim-go
-let g:go_fmt_command = "goimports"
 
 """"""""""""""""""""""""""""
 "" NeoComplete関連
@@ -473,7 +471,6 @@ let g:syntastic_go_checkers = ['go', 'golint']
 " for golang {{{
 set path+=$GOPATH/src/**
 let g:gofmt_command = 'goimports'
-au BufWritePre *.go Fmt
 au BufNewFile,BufRead *.go set sw=4 noexpandtab ts=4 completeopt=menu,preview
 au FileType go compiler go
 " }}}
