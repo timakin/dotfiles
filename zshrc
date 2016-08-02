@@ -270,3 +270,6 @@ alias dots='cd ~/dotfiles'
 
 # godep go alias
 alias god='godep go'
+
+# go test
+alias got='go test $(go list ./... | grep -v /vendor/)'
