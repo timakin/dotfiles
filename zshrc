@@ -1,5 +1,7 @@
 # Path Setting
+eval "$(rbenv init -)"
 export MANPATH=/opt/local/man:$MANPATH
+export PATH="$HOME/.rbenv/bin:$PATH"
 export PATH=$PATH:/usr/local/bin/mysql
 export PATH=/opt/local/bin:/opt/local/sbin/:$PATH
 export PATH=~/.local/bin:$PATH
