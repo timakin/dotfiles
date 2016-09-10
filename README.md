@@ -106,3 +106,9 @@ https://nodejs.org/en/
 ```
 ln -s /Applications/Atom.app/Contents/Resources/app/atom.sh /usr/local/bin/atom
 ```
+
+- godef
+
+```
+https://github.com/dgryski/vim-godef
+```
