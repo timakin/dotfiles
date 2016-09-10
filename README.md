@@ -112,3 +112,9 @@ ln -s /Applications/Atom.app/Contents/Resources/app/atom.sh /usr/local/bin/atom
 ```
 https://github.com/dgryski/vim-godef
 ```
+
+- ssh key
+
+```
+ssh-copy-id -i ~/.ssh/id_rsa.pub <user name>@<ip address>:
+```
