@@ -100,3 +100,9 @@ go get -u github.com/nsf/gocode
 ```
 https://nodejs.org/en/
 ```
+
+- Atom symlink
+
+```
+ln -s /Applications/Atom.app/Contents/Resources/app/atom.sh /usr/local/bin/atom
+```
