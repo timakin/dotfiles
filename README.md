@@ -12,7 +12,6 @@
 - dash
 - 1password
 - Dropbox(railsgate)
-- Goofy
 
 # プログラミング環境
 
