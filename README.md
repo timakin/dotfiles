@@ -118,3 +118,9 @@ https://github.com/dgryski/vim-godef
 ```
 ssh-copy-id -i ~/.ssh/id_rsa.pub <user name>@<ip address>:
 ```
+
+tig
+
+```
+brew install tig
+```
