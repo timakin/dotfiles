@@ -272,6 +272,9 @@ alias psa='ps aux | grep '
 # shift to dotfiles dir
 alias dots='cd ~/dotfiles'
 
+# ctags
+alias ctags="`brew --prefix`/bin/ctags"
+
 # godep go alias
 alias god='godep go'
 
