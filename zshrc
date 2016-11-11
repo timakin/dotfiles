@@ -280,3 +280,8 @@ alias god='godep go'
 
 # go test
 alias got='go test $(go list ./... | grep -v /vendor/)'
+
+# remove file from git-history
+function remove-from-history() {
+    git filter-branch --index-filter `git rm -r --cached --ignore-unmatch $1` HEAD
+}
