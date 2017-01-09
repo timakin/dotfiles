@@ -285,7 +285,6 @@ alias got='go test $(go list ./... | grep -v /vendor/)'
 function remove-from-history() {
     git filter-branch --index-filter `git rm -r --cached --ignore-unmatch $1` HEAD
 
-################## Git ####################
+# Git
 alias gcho="git status | grep both | awk '{print $3}' | xargs git checkout --ours"
 alias gcht="git status | grep both | awk '{print $3}' | xargs git checkout --theirs"
-
