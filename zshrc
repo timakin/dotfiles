@@ -289,9 +289,3 @@ function remove-from-history() {
 # Git
 alias gcho="git status | grep both | awk '{print $3}' | xargs git checkout --ours"
 alias gcht="git status | grep both | awk '{print $3}' | xargs git checkout --theirs"
-
-# VSCode
-function code () { 
-    VSCODE_CWD="$PWD" open -n -b "com.microsoft.VSCode" --args $*
-}
-
