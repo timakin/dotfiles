@@ -10,6 +10,7 @@ export GOPATH=$HOME/go
 export PATH=$PATH:$GOPATH/bin
 export PATH=$PATH:/bin:/usr/bin:/usr/local/bin
 export PATH=$PATH:/usr/local/rvm/gems/ruby-2.3.0/bin
+export PATH=$PATH:$HOME/go_appengine/
 export GOPATH=$HOME/go
 
 # 色についての設定
