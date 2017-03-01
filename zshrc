@@ -1,5 +1,7 @@
 # Path Setting
 eval "$(rbenv init -)"
+eval "$(direnv hook zsh)"
+export EDITOR=vi
 export MANPATH=/opt/local/man:$MANPATH
 export PATH="$HOME/.rbenv/bin:$PATH"
 export PATH=$PATH:/usr/local/bin/mysql
@@ -10,7 +12,7 @@ export GOPATH=$HOME/go
 export PATH=$PATH:$GOPATH/bin
 export PATH=$PATH:/bin:/usr/bin:/usr/local/bin
 export PATH=$PATH:/usr/local/rvm/gems/ruby-2.3.0/bin
-export GOPATH=$HOME/go
+export PATH=$PATH:$HOME/go_appengine
 
 # 色についての設定
 autoload colors
