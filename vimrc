@@ -199,10 +199,6 @@ NeoBundleLazy 'Shougo/unite.vim', {
       \       'commands' : [ "Unite", "UniteWithBufferDir", "UniteWithCurrentDir" ]
       \   }
       \}
-NeoBundle 'Shougo/neosnippet'
-NeoBundle 'Shougo/neosnippet-snippets'
-
-""NeoBundle 'Shougo/vimproc.vim'
 
 NeoBundle 'Rip-Rip/clang_complete'
 NeoBundle 'vim-scripts/taglist.vim'
