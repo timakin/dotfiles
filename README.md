@@ -12,6 +12,11 @@
 - dash
 - 1password
 - Dropbox(railsgate)
+- HyperSwitch
+- vscode
+- magnet
+- karabiner
+- http://qiita.com/ktz47/items/0ae5d2db250808952f12
 
 # プログラミング環境
 
@@ -26,6 +31,8 @@
 - zsh(chshも)
 - oh-my-zsh
 - peco
+- rails
+- rbenv
 
 ```
 https://github.com/peco/peco
