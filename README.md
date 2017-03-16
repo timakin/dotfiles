@@ -17,6 +17,7 @@
 - magnet
 - karabiner
 - http://qiita.com/ktz47/items/0ae5d2db250808952f12
+- http://qiita.com/ryutoyasugi/items/4a290bcd4e2f5c388c85
 
 # プログラミング環境
 
