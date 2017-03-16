@@ -127,8 +127,14 @@ https://github.com/dgryski/vim-godef
 ssh-copy-id -i ~/.ssh/id_rsa.pub <user name>@<ip address>:
 ```
 
-tig
+- tig
 
 ```
 brew install tig
+```
+
+- mysql
+
+```
+brew install mysql
 ```
