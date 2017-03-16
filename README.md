@@ -34,6 +34,7 @@
 - peco
 - rails
 - rbenv
+- ruby
 
 ```
 https://github.com/peco/peco
