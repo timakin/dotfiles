@@ -139,3 +139,9 @@ brew install tig
 ```
 brew install mysql
 ```
+
+- httpie
+
+```
+brew install httpie
+```

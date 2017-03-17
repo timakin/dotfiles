@@ -13,6 +13,12 @@ export PATH=$PATH:$GOPATH/bin
 export PATH=$PATH:/bin:/usr/bin:/usr/local/bin
 export PATH=$PATH:/usr/local/rvm/gems/ruby-2.3.0/bin
 export PATH=$PATH:$HOME/go_appengine
+export PYENV_ROOT="${HOME}/.pyenv"
+if [ -d "${PYENV_ROOT}" ]; then
+    export PATH=${PYENV_ROOT}/bin:$PATH
+    eval "$(pyenv init -)"
+    eval "$(pyenv virtualenv-init -)"
+fi
 
 # 色についての設定
 autoload colors
