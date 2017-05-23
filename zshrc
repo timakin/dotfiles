@@ -297,3 +297,4 @@ function remove-from-history() {
 # Git
 alias gcho="git status | grep both | awk '{print $3}' | xargs git checkout --ours"
 alias gcht="git status | grep both | awk '{print $3}' | xargs git checkout --theirs"
+alias hpr="hub pull-request"
