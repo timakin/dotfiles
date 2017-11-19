@@ -303,6 +303,14 @@ if [ -f '/Users/takahashiseiji/Downloads/google-cloud-sdk/path.zsh.inc' ]; then 
 
 # The next line enables shell command completion for gcloud.
 if [ -f '/Users/takahashiseiji/Downloads/google-cloud-sdk/completion.zsh.inc' ]; then source '/Users/takahashiseiji/Downloads/google-cloud-sdk/completion.zsh.inc'; fi
+
+# kubectl alias
+alias kgp="kubectl get pods"
+alias kgs="kubectl get services"
+alias kgd="kubectl get deployments"
+alias kgpv="kubectl get pv"
+alias kgpvs="kubectl get pvc"
+
 #compdef kubectl
 
 # Copyright 2016 The Kubernetes Authors.
@@ -5111,7 +5119,6 @@ _kubectl_create_serviceaccount()
     must_have_one_flag=()
     must_have_one_noun=()
     noun_aliases=()
-}
 
 _kubectl_create()
 {
@@ -9096,3 +9103,6 @@ BASH_COMPLETION_EOF
 
 __kubectl_bash_source <(__kubectl_convert_bash_to_zsh)
 _complete kubectl 2>/dev/null
+
+# Hub command
+alias hpr="hub pull-request"
