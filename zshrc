@@ -14,6 +14,7 @@ export PATH=$PATH:/bin:/usr/bin:/usr/local/bin
 export PATH=$PATH:/usr/local/rvm/gems/ruby-2.3.0/bin
 export PATH=$PATH:$HOME/go_appengine
 export PYENV_ROOT="${HOME}/.pyenv"
+export PATH=$PATH:/Users/seiji.takahashi/Library/Android/sdk/platform-tools
 if [ -d "${PYENV_ROOT}" ]; then
     export PATH=${PYENV_ROOT}/bin:$PATH
     eval "$(pyenv init -)"
@@ -53,7 +54,6 @@ setopt hist_ignore_dups
 # rails
 alias be="bundle exec"
 alias r='be rails'
-alias rg='rails g'
 alias bi='bundle install --path vendor/bundle'
 alias bu='bundle update --path vendor/bundle'
 alias rsh='rails-sh'
@@ -165,6 +165,17 @@ function peco-src () {
 zle -N peco-src
 bindkey '^g' peco-src
 
+function gopath-src () {
+    local selected_dir=$(ls -ld $GOPATH/src/*/*/* | awk '{ print $9 }' | peco --query "$LBUFFER")
+    if [ -n "$selected_dir" ]; then
+      BUFFER="cd ${selected_dir}"
+      zle accept-line
+    fi
+    zle clear-screen
+}
+zle -N gopath-src
+bindkey '^G' gopath-src
+
 function vimg() {
     vim $(gof)
 }
@@ -206,16 +217,6 @@ alias startms='/usr/local/bin/mysqld'
 alias mslogin='mysql -u root -p'
 
 ### docker setting
-if [ -e /Users/seiji.takahashi ] ; then
-    export DOCKER_HOST=tcp://192.168.59.103:2376
-    export DOCKER_TLS_VERIFY=1
-    export DOCKER_CERT_PATH=/Users/seiji.takahashi/.boot2docker/certs/boot2docker-vm
-elif [ -e /Users/takahashiseiji ] ; then
-    eval "$(docker-machine env sacket)"
-fi
-
-alias b2d='boot2docker'
-
 # Docker
 alias d="docker"
 alias dc="docker-compose"
@@ -298,3 +299,16 @@ function remove-from-history() {
 alias gcho="git status | grep both | awk '{print $3}' | xargs git checkout --ours"
 alias gcht="git status | grep both | awk '{print $3}' | xargs git checkout --theirs"
 alias hpr="hub pull-request"
+
+#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
+export SDKMAN_DIR="/Users/seiji.takahashi/.sdkman"
+[[ -s "/Users/seiji.takahashi/.sdkman/bin/sdkman-init.sh" ]] && source "/Users/seiji.takahashi/.sdkman/bin/sdkman-init.sh"
+
+# Keynote
+alias codecopy="highlight -O rtf $1 | pbcopy"
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/Users/seiji.takahashi/Downloads/google-cloud-sdk/path.zsh.inc' ]; then source '/Users/seiji.takahashi/Downloads/google-cloud-sdk/path.zsh.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/Users/seiji.takahashi/Downloads/google-cloud-sdk/completion.zsh.inc' ]; then source '/Users/seiji.takahashi/Downloads/google-cloud-sdk/completion.zsh.inc'; fi

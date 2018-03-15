@@ -461,9 +461,9 @@ endif
 let g:neocomplete#sources#omni#input_patterns.perl = '\h\w*->\h\w*\|\h\w*::'
 
 " syntastic for Go
-let g:syntastic_mode_map = { 'mode': 'passive',
-    \ 'active_filetypes': ['go'] }
-let g:syntastic_go_checkers = ['go', 'golint']
+" let g:syntastic_mode_map = { 'mode': 'passive',
+"    \ 'active_filetypes': ['go'] }
+" let g:syntastic_go_checkers = ['go', 'golint']
 
 
 " for golang {{{
