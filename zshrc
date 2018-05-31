@@ -121,6 +121,9 @@ alias diff='diff --strip-trailing-cr'
 alias less='less -R'                                         # Color escape sequences will displayed
 alias L='less'
 alias P='peco'
+alias onelogin-aws-login="docker run -v $HOME:/root -i -t koid/awscli-with-onelogin onelogin-aws-login $@"
+alias aws="docker run -v $HOME:/root koid/awscli-with-onelogin aws $@"
+alias onelog='onelogin-aws-login -C biwako --profile default -u seiji.takahashi@gunosy.com'
 
 # peco with ag
 function agp() {
@@ -163,7 +166,7 @@ function peco-src () {
   zle clear-screen
 }
 zle -N peco-src
-bindkey '^g' peco-src
+bindkey '^f' peco-src
 
 function gopath-src () {
     local selected_dir=$(ls -ld $GOPATH/src/*/*/* | awk '{ print $9 }' | peco --query "$LBUFFER")
@@ -174,7 +177,7 @@ function gopath-src () {
     zle clear-screen
 }
 zle -N gopath-src
-bindkey '^G' gopath-src
+bindkey '^g' gopath-src
 
 function vimg() {
     vim $(gof)
