@@ -223,10 +223,7 @@ alias mslogin='mysql -u root -p'
 # Docker
 alias d="docker"
 alias dc="docker-compose"
-  alias dm="docker-machine"
-  alias dm-start="docker-machine start sacket && eval \"\$(docker-machine env sacket)\""
-  alias dm-restart="docker-machine restart sacket && eval \"\$(docker-machine env sacket)\""
-  alias dm-env="eval \"\$(docker-machine env sacket)\""
+alias dm="docker-machine"
 
 if [ -s "/usr/local/bin/docker-machine" ] ; then
   dm-env > /dev/null 2>&1
@@ -2991,8 +2988,6 @@ _kubectl_config_use-context()
     flags+=("--log-backtrace-at=")
     flags+=("--log-dir=")
     flags+=("--log-flush-frequency=")
-    flags+=("--logtostderr")
-    flags+=("--match-server-version")
     flags+=("--namespace=")
     flags_with_completion+=("--namespace")
     flags_completion+=("__kubectl_get_resource_namespace")
@@ -9110,6 +9105,7 @@ _complete kubectl 2>/dev/null
 
 # Hub command
 alias hpr="hub pull-request"
+alias hbr="hub browse"
 
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 export SDKMAN_DIR="/Users/seiji.takahashi/.sdkman"
@@ -9121,5 +9117,3 @@ alias codecopy="highlight -O rtf $1 | pbcopy"
 # The next line updates PATH for the Google Cloud SDK.
 if [ -f '/Users/seiji.takahashi/Downloads/google-cloud-sdk/path.zsh.inc' ]; then source '/Users/seiji.takahashi/Downloads/google-cloud-sdk/path.zsh.inc'; fi
 
-# The next line enables shell command completion for gcloud.
-if [ -f '/Users/seiji.takahashi/Downloads/google-cloud-sdk/completion.zsh.inc' ]; then source '/Users/seiji.takahashi/Downloads/google-cloud-sdk/completion.zsh.inc'; fi
