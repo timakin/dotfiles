@@ -1,20 +1,28 @@
 ローカル環境構築で必要な事
 ========================
 
-## GUIアプリ
+# Browser
 
-- chrome
-- line
-- slack
-- iterm2
-- alfead
+- Chrome
+
+# Utility
+
+- Alfead
 - 1password
-- Dropbox(railsgate)
-- magnet
 - karabiner
-- Postman
-- Discord
+- magnet
 - Station
+
+# Communication
+
+- Slack
+- Line
+- iterm2
+- Discord
+
+# Cloud
+
+- Dropbox(railsgate)
 
 # Design
 - Abstract
@@ -27,56 +35,37 @@
 - Zeplin
 
 # Programming
-- iTerm2
+
+## Editor
+
 - XCode
-- homebrew
-- git
-- Zsh
-  - dotfiles/zshrc
-- Vim
-  - dotfiles/vimrc
-- neobundle
-- oh-my-zsh
-- peco
-- rails
-- rbenv
-- ruby
-- golang
 - Atom
 - VSCode
-- mysql
 - Goland
 - WebStorm
 - Rubymine
-- zaw
 
-```
-mkdir ~/zsh_plugins
-cd zsh_plugins
-git clone git://github.com/zsh-users/zaw.git
-```
+## Development
 
-- vim clipboard
+- iTerm2
+- Postman
 
-```
-sudo port deactivate vim
-sudo port install vim +clipboard
-```
+## Language
 
-- gof(Fuzzy finder)
+- rbenv
+- ruby
+- rails
+- golang
 
-```
-go get github.com/mattn/gof
-```
+## Middleware
 
-- files(file listing)
+- mysql
 
-[fileめっちゃ早く一覧化する。-aオプションをつけて階層遡れる](https://github.com/mattn/files)
+## CLI
 
-```
-go get github.com/mattn/files
-```
-
+- homebrew
+- git
+- peco
 - ghq
 
 ```
@@ -120,8 +109,29 @@ ssh-copy-id -i ~/.ssh/id_rsa.pub <user name>@<ip address>:
 brew install tig
 ```
 
-- mysql
+- Zsh
+  - dotfiles/zshrc
+  - oh-my-zsh
+- Vim
+  - dotfiles/vimrc
+  - neobundle
+  - vim clipboard
 
 ```
-brew install mysql
+sudo port deactivate vim
+sudo port install vim +clipboard
+```
+
+- gof(Fuzzy finder)
+
+```
+go get github.com/mattn/gof
+```
+
+- files(file listing)
+
+[fileめっちゃ早く一覧化する。-aオプションをつけて階層遡れる](https://github.com/mattn/files)
+
+```
+go get github.com/mattn/files
 ```
