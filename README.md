@@ -3,43 +3,50 @@
 
 ## GUIアプリ
 
-- atom
+- chrome
 - line
 - slack
-- chrome
 - iterm2
 - alfead
-- dash
 - 1password
 - Dropbox(railsgate)
-- HyperSwitch
-- vscode
 - magnet
 - karabiner
-- http://qiita.com/ktz47/items/0ae5d2db250808952f12
-- http://qiita.com/ryutoyasugi/items/4a290bcd4e2f5c388c85
+- Postman
+- Discord
+- Station
 
-# プログラミング環境
+# Design
+- Abstract
+- Craft
+- InVision
+- Sketch Plugins
+  - Sketch Runner
+  - Rename It
+  - Find And Replace
 
-- atom-sync-settings
-  - AtomのPackeage Managerでインストール
+# Programming
+- iTerm2
+- XCode
 - homebrew
 - git
-- XCode
-- dotfiles/vimrc
-- dotfiles/zshrc
+- Zsh
+  - dotfiles/zshrc
+- Vim
+  - dotfiles/vimrc
 - neobundle
-- zsh(chshも)
 - oh-my-zsh
 - peco
 - rails
 - rbenv
 - ruby
-
-```
-https://github.com/peco/peco
-```
-
+- golang
+- Atom
+- VSCode
+- mysql
+- Goland
+- WebStorm
+- Rubymine
 - zaw
 
 ```
@@ -69,27 +76,11 @@ go get github.com/mattn/gof
 go get github.com/mattn/files
 ```
 
-- Duotone colors
-
-```
-cd ~/.vim/bundle
-git clone https://github.com/atelierbram/vim-colors_duotones.git
-```
-
 - ghq
 
 ```
 go get github.com/motemen/ghq
 git config --global ghq.root ~/src
-```
-
-- s
-
-```
-go get -v github.com/zquestz/s
-cd $GOPATH/src/github.com/zquestz/s
-make
-make install
 ```
 
 - diff-so-fancy
@@ -108,12 +99,6 @@ go get -u github.com/nsf/gocode
 
 ```
 https://nodejs.org/en/
-```
-
-- Atom symlink
-
-```
-ln -s /Applications/Atom.app/Contents/Resources/app/atom.sh /usr/local/bin/atom
 ```
 
 - godef
@@ -138,10 +123,4 @@ brew install tig
 
 ```
 brew install mysql
-```
-
-- httpie
-
-```
-brew install httpie
 ```
