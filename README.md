@@ -24,6 +24,7 @@
   - Sketch Runner
   - Rename It
   - Find And Replace
+- Zeplin
 
 # Programming
 - iTerm2
