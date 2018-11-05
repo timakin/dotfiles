@@ -44,11 +44,13 @@
 - Goland
 - WebStorm
 - Rubymine
+- DataGrip
 
 ## Development
 
 - iTerm2
 - Postman
+- Sequel Pro
 
 ## Language
 
