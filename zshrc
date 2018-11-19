@@ -207,3 +207,6 @@ function remove-from-history() {
 # Hub command
 alias hpr="hub pull-request"
 alias hbr="hub browse"
+
+# Google News
+alias gn="open https://news.google.com"
