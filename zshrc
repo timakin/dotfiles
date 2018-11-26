@@ -208,5 +208,15 @@ function remove-from-history() {
 alias hpr="hub pull-request"
 alias hbr="hub browse"
 
-# Google News
+# NewsFeed
+alias stockclip="open https://www.stockclip.net/"
 alias gn="open https://news.google.com"
+alias feedly="open https://feedly.com/"
+alias news="open -n /Applications/Chrome.app/; gn; stockclip; feedly"
+
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/Users/seiji.takahashi/Downloads/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/seiji.takahashi/Downloads/google-cloud-sdk/path.zsh.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/Users/seiji.takahashi/Downloads/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/seiji.takahashi/Downloads/google-cloud-sdk/completion.zsh.inc'; fi
