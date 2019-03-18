@@ -3,12 +3,6 @@ eval "$(rbenv init -)"
 eval "$(direnv hook zsh)"
 export EDITOR=vi
 
-# 色についての設定
-autoload colors
-colors
-export LSCOLORS=gxfxxxxxcxxxxxxxxxgxgx
-export LS_COLORS='di=01;36:ln=01;35:ex=01;32'
-zstyle ':completion:*' list-colors 'di=36' 'ln=35' 'ex=32'
 
 # プロンプトの表示を変更する。
 autoload -Uz vcs_info
@@ -33,10 +27,6 @@ HISTSIZE=10000
 SAVEHIST=10000
 setopt hist_ignore_dups
 
-# rails
-alias be="bundle exec"
-alias bi='bundle install --path vendor/bundle'
-alias bu='bundle update --path vendor/bundle'
 
 # その他エイリアス
 alias de='cd Desktop'
@@ -166,9 +156,6 @@ function remove-from-history() {
     git filter-branch --index-filter `git rm -r --cached --ignore-unmatch $1` HEAD
 }
 
-# Hub command
-alias hpr="hub pull-request"
-alias hbr="hub browse"
 
 # The next line updates PATH for the Google Cloud SDK.
 if [ -f '/Users/seiji.takahashi/Downloads/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/seiji.takahashi/Downloads/google-cloud-sdk/path.zsh.inc'; fi
