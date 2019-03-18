@@ -8,3 +8,8 @@ alias gch='git checkout'
 alias gf='git fetch'
 alias gip='git push origin `git rev-parse --abbrev-ref HEAD`'
 alias gst='git status'
+
+# remove file from git-history
+function remove-from-history() {
+    git filter-branch --index-filter `git rm -r --cached --ignore-unmatch $1` HEAD
+}
