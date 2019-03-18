@@ -49,19 +49,7 @@ alias be="bundle exec"
 alias bi='bundle install --path vendor/bundle'
 alias bu='bundle update --path vendor/bundle'
 
-# git関連のエイリアス設定
-alias cam='git commit -a -m'
-alias delete-merged-branches="git branch --merged | grep -v '*' | xargs -I % git branch -d %"
-alias difff='git diff --color | diff-so-fancy'
-alias gad='git add . -A'
-alias gbr='git branch'
-alias gch='git checkout'
-alias gf='git fetch'
-alias gip='git push origin `git rev-parse --abbrev-ref HEAD`'
-alias gst='git status'
-
 # その他エイリアス
-alias dc='docker-compose'
 alias de='cd Desktop'
 alias ll='ls -l'
 alias sakura='ssh timakin@153.121.70.114'
@@ -148,21 +136,6 @@ function zaw-src-gitdir-cd () {
 }
 zaw-register-src -n gitdir zaw-src-gitdir
 
-### docker setting
-# Docker
-alias d="docker"
-alias dc="docker-compose"
-alias dm="docker-machine"
-
-if [ -s "/usr/local/bin/docker-machine" ] ; then
-  dm-env > /dev/null 2>&1
-fi
-
-alias drm='docker rm $(docker ps -a --filter "status=exited" -q)'
-function drmi() {
-    docker rmi $(docker images -a | awk '/^<none>/ { print $3 }')
-}
-
 ### history search with peco
 function peco-select-history() {
     local tac
@@ -207,13 +180,6 @@ function remove-from-history() {
 # Hub command
 alias hpr="hub pull-request"
 alias hbr="hub browse"
-
-# NewsFeed
-alias stockclip="open https://www.stockclip.net/"
-alias gn="open https://news.google.com"
-alias feedly="open https://feedly.com/"
-alias news="open -n /Applications/Chrome.app/; gn; stockclip; feedly"
-
 
 # The next line updates PATH for the Google Cloud SDK.
 if [ -f '/Users/seiji.takahashi/Downloads/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/seiji.takahashi/Downloads/google-cloud-sdk/path.zsh.inc'; fi
