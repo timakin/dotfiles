@@ -112,7 +112,7 @@ brew install tig
 ```
 
 - Zsh
-  - dotfiles/zshrc
+  - ln -sfn $HOME/src/github.com/timakin/dotfiles/vim.d $HOME/.vim
   - oh-my-zsh
 - Vim
   - dotfiles/vimrc
