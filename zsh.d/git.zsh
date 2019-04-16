@@ -8,6 +8,7 @@ alias gch='git checkout'
 alias gf='git fetch'
 alias gip='git push origin `git rev-parse --abbrev-ref HEAD`'
 alias gst='git status'
+alias gpr='git-pr-release'
 
 # remove file from git-history
 function remove-from-history() {
