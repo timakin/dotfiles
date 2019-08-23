@@ -9,6 +9,11 @@ alias cp='cp -i'                                             # Comfirm overwrite
 alias diff='diff --strip-trailing-cr'
 alias less='less -R'                                         # Color escape sequences will displayed
 
+# Onelogin
+alias onelogin-aws-login="docker run -v $HOME:/root -i -t koid/awscli-with-onelogin onelogin-aws-login $@"
+alias aws="docker run -v $HOME:/root koid/awscli-with-onelogin aws $@"
+
+
 ### replace words under current directory
 function greplace() {
     find . -name ${3:-*} | xargs sed -i "" "s/$1/$2/g"
