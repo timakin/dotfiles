@@ -1,6 +1,7 @@
 export MANPATH=/opt/local/man:$MANPATH
 export PATH="$HOME/.rbenv/bin:$PATH"
 export PATH=$PATH:/usr/local/bin/mysql
+export PATH=$PATH:/usr/local/bin/protoc-gen-grpc-web
 export PATH=/opt/local/bin:/opt/local/sbin/:$PATH
 export PATH=~/.local/bin:$PATH
 export GOPATH=$HOME/go
