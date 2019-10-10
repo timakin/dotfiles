@@ -137,3 +137,9 @@ go get github.com/mattn/gof
 ```
 go get github.com/mattn/files
 ```
+
+- pet
+
+```
+brew install knqyf263/pet/pet
+```
