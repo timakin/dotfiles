@@ -1,8 +1,3 @@
-source ~/dotfiles/vim.d/init/editor.vim
-source ~/dotfiles/vim.d/init/plugin.vim
-source ~/dotfiles/vim.d/plugins-config/go.vim
-source ~/dotfiles/vim.d/plugins-config/neocomplete.vim
-
 """""""""""""""""
 "" NERDCommenter
 let NERDSpaceDelims = 1
