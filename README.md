@@ -12,6 +12,7 @@
 - karabiner
 - magnet
 - Station
+- Authy
 
 # Communication
 
@@ -142,4 +143,10 @@ go get github.com/mattn/files
 
 ```
 brew install knqyf263/pet/pet
+```
+
+- onelogin
+
+```
+ln -s ~/dotfiles/config/.aws-onelogin.config .aws-onelogin.config
 ```

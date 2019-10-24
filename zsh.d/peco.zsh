@@ -66,5 +66,28 @@ function peco-select-history() {
     CURSOR=$#BUFFER
     zle clear-screen
 }
+
+# AWS Session Manager
+function peco-session-manager() {
+    INSTANCE_ID="$(
+        aws ec2 describe-instances \
+            | jq -cr '.Reservations[].Instances[]
+                        | select(.State.Name == "running")
+                        | .InstanceId + " (" + 
+                        ( [.Tags[] | .Key + ":" + .Value]
+                            | sort
+                            | join(", ")) + ")"' \
+            | peco \
+            | cut -d' ' -f1
+    )"
+    if [ -z "$INSTANCE_ID" ]; then
+    echo "$(date +'%Y-%m-%d %H:%M:%S %z') [ERROR] Unable to fetch any instance."
+    return
+    fi
+
+    aws ssm start-session --target $INSTANCE_ID
+}
+alias pssm='peco-session-manager'
+
 zle -N peco-select-history
 bindkey '^r' peco-select-history

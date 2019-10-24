@@ -1,15 +1,32 @@
+function profile() {
+    START_TIME=`~/bin/unixnano`
+		source $1
+    END_TIME=`~/bin/unixnano`
+
+    TIME=`expr ${END_TIME} - ${START_TIME}`
+    SEC=`expr $TIME / 1000000000`
+    USEC=`expr $TIME % 1000000000`
+    echo "${SEC}.`printf '%09d' $USEC`: $1"
+}
+
+
 # Import child configs
 ZSHHOME="${HOME}/dotfiles/zsh.d"
 
-# Onelogin
-alias onelogin-aws-login="docker run -v $HOME:/root -i -t koid/awscli-with-onelogin onelogin-aws-login $@"
-export AWS_DEFAULT_REGION=ap-northeast-1
-export AWS_PROFILE=biwako
-
-if [ -d $ZSHHOME -a -r $ZSHHOME -a \
-     -x $ZSHHOME ]; then
-    for i in $ZSHHOME/*; do
-        [[ ${i##*/} = *.zsh ]] &&
-            [ \( -f $i -o -h $i \) -a -r $i ] && . $i
-    done
-fi
+source $ZSHHOME/alias.sh
+source $ZSHHOME/aws.zsh
+source $ZSHHOME/bundle.zsh
+source $ZSHHOME/color.zsh
+source $ZSHHOME/docker.zsh
+source $ZSHHOME/editor.zsh
+source $ZSHHOME/eval.zsh
+source $ZSHHOME/gcloud.zsh
+source $ZSHHOME/git.zsh
+source $ZSHHOME/hub.zsh
+source $ZSHHOME/keyboard.zsh
+source $ZSHHOME/news.zsh
+source $ZSHHOME/path.zsh
+source $ZSHHOME/peco.zsh
+source $ZSHHOME/process.zsh
+source $ZSHHOME/prompt.zsh
+source $ZSHHOME/zaw.zsh
