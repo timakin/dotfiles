@@ -1,2 +1,2 @@
-runtime! ~/dotfiles/vim.d/init/*.vim
-runtime! ~/dotfiles/vim.d/plugins-config/*.vim
+runtime! config/init/*.vim
+runtime! config/plugins-config/*.vim

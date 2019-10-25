@@ -120,9 +120,15 @@ brew install tig
   - neobundle
   - vim clipboard
 
+
 ```
 sudo port deactivate vim
 sudo port install vim +clipboard
+```
+
+```
+ln -s dotfiles/vim.d .vim/config
+ln -s dotfiles/vimrc .vimrc
 ```
 
 - gof(Fuzzy finder)
