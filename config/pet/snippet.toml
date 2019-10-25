@@ -1,0 +1,59 @@
+[[snippets]]
+  description = "Show disk utilization of /"
+  command = "du -h --max-depth=1 / 2>/dev/null"
+  output = ""
+[[snippets]]
+  description = "Show disk utilization of /"
+  command = "du -h --max-depth=1 / 2>/dev/null"
+  output = ""
+[[snippets]]
+  description = "Show disk utilization of /var/* with sort"
+  command = "sudo du -scm /var/* | sort -rn"
+  output = ""
+[[snippets]]
+  description = "Check the number of cpu for Linux"
+  command = "cat /proc/cpuinfo | grep processor | wc -l"
+  output = ""
+[[snippets]]
+  description = "Reboot shell process"
+  command = "exec ${SHELL} -l"
+  output = ""
+
+[[snippets]]
+  description = "Delete already merged branches"
+  command = "git branch --merged | grep -v '*' | xargs -I % git branch -d %"
+  output = ""
+
+[[snippets]]
+  description = "Delete inactive docker processes"
+  command = "docker rm $(docker ps -a --filter "status=exited" -q)"
+  output = ""  
+[[snippets]]
+  description = "Delete unused docker images"
+  command = "docker rmi $(docker images -a | awk '/^<none>/ { print $3 }')"
+  output = ""  
+
+[[snippets]]
+  description = "Login 'gunosy' account by onelogin-aws-login"
+  command = "onelogin-aws-login -d 32400 --config-name gunosy --username seiji.takahashi@gunosy.com --profile gunosy"
+  output = ""
+[[snippets]]
+  description = "Login 'banri' account by onelogin-aws-login"
+  command = "onelogin-aws-login -d 32400 --config-name banri --username seiji.takahashi@gunosy.com --profile banri"
+  output = ""
+[[snippets]]
+  description = "Login 'biwako' account by onelogin-aws-login"
+  command = "onelogin-aws-login -d 32400 --config-name biwako --username seiji.takahashi@gunosy.com --profile biwako"
+  output = ""
+[[snippets]]
+  description = "Show aws ec2 instances(gunosy) as table"
+  command = "aws --profile gunosy ec2 describe-instances --filter 'Name=tag:Project,Values=serval' 'Name=instance-state-name,Values=running' --query 'sort_by(Reservations[].Instances[].{InstanceId:InstanceId,ImageId:ImageId,AvailabilityZone:Placement.AvailabilityZone,Name:Tags[?Key==`Name`].Value|[0],Role:Tags[?Key==`Role`].Value|[0],PrivateIpAddress:PrivateIpAddress},&Name)' --output table"
+  output = ""
+[[snippets]]
+  description = "Show OpsWorks Layer name that includes specified word in customJson"
+  command = "aws --profile gunosy --region ap-northeast-1 opsworks describe-stacks | jq '.Stacks[].StackId' | xargs -I {} aws --profile gunosy --region ap-northeast-1 opsworks describe-layers --stack-id {} | jq '.Layers[] | select(.CustomJson != null) | select(.CustomJson | test(\"*\")) | .Name'"
+  output = ""
+[[snippets]]
+  description = "Show OpsWorks Stack name that includes specified word in customJson"
+  command = "aws --profile gunosy --region us-east-1 opsworks describe-stacks | jq '.Stacks[] | select(.CustomJson != null) | select(.CustomJson | test(\"*\")) | .Name'"
+  output = ""

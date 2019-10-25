@@ -127,7 +127,8 @@ sudo port install vim +clipboard
 ```
 
 ```
-ln -s dotfiles/vim.d .vim/config
+rm -rf .vim/config
+cp -rf dotfiles/vim.d .vim/config
 ln -s dotfiles/vimrc .vimrc
 ```
 
@@ -148,7 +149,12 @@ go get github.com/mattn/files
 - pet
 
 ```
-brew install knqyf263/pet/pet
+go get github.com/knqyf263/pet
+```
+
+```
+rm -rf .config/pet
+cp -rf dotfiles/config/pet .config/pet
 ```
 
 - onelogin

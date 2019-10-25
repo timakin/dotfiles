@@ -1,14 +1,13 @@
 # その他エイリアス
 alias de='cd Desktop'
 alias ll='ls -l'
-alias shboot='exec ${SHELL} -l'
 alias vzsh='vim ~/.zshrc'
 alias ls='ls -G'                                             # Show [/*@], Enable color
 alias mv='mv -i'                                             # Comfirm overwrite
 alias cp='cp -i'                                             # Comfirm overwrite
 alias diff='diff --strip-trailing-cr'
-alias less='less -R'                                         # Color escape sequences will displayed
-
+alias less='less -R'                                    # Color escape sequences will displayed
+alias psp='pet search | pbcopy'
 
 
 ### replace words under current directory
