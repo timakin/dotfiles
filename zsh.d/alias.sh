@@ -7,6 +7,7 @@ alias mv='mv -i'                                             # Comfirm overwrite
 alias cp='cp -i'                                             # Comfirm overwrite
 alias diff='diff --strip-trailing-cr'
 alias less='less -R'                                    # Color escape sequences will displayed
+alias cat='bat'
 
 ### replace words under current directory
 function greplace() {

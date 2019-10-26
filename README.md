@@ -174,3 +174,9 @@ npm install gtop -g
 ```
 brew install fd
 ```
+
+- bat
+
+```
+brew install bat
+```
