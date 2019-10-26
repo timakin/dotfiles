@@ -7,13 +7,8 @@ alias mv='mv -i'                                             # Comfirm overwrite
 alias cp='cp -i'                                             # Comfirm overwrite
 alias diff='diff --strip-trailing-cr'
 alias less='less -R'                                    # Color escape sequences will displayed
-alias psp='pet search | pbcopy'
-
 
 ### replace words under current directory
 function greplace() {
     find . -name ${3:-*} | xargs sed -i "" "s/$1/$2/g"
 }
-
-# shift to dotfiles dir
-alias dots='cd ~/dotfiles'

@@ -27,6 +27,7 @@ source $ZSHHOME/keyboard.zsh
 source $ZSHHOME/news.zsh
 source $ZSHHOME/path.zsh
 source $ZSHHOME/peco.zsh
+source $ZSHHOME/pet.zsh
 source $ZSHHOME/process.zsh
 source $ZSHHOME/prompt.zsh
 source $ZSHHOME/zaw.zsh

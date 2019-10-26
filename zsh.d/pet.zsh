@@ -9,4 +9,4 @@ function pet-select() {
   zle redisplay
 }
 zle -N pet-select
-bindkey '^s' pet-select
+bindkey '^p' pet-select
