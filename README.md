@@ -168,3 +168,9 @@ ln -s ~/dotfiles/config/.aws-onelogin.config .aws-onelogin.config
 ```
 npm install gtop -g
 ```
+
+- fd
+
+```
+brew install fd
+```
