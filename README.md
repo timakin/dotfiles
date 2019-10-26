@@ -162,3 +162,9 @@ cp -rf dotfiles/config/pet .config/pet
 ```
 ln -s ~/dotfiles/config/.aws-onelogin.config .aws-onelogin.config
 ```
+
+- gtop
+
+```
+npm install gtop -g
+```
