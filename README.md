@@ -72,6 +72,10 @@
 - ghq
 
 ```
+rm .gitconfig; cp dotfiles/gitconfig .gitconfig
+```
+
+```
 go get github.com/motemen/ghq
 git config --global ghq.root ~/src
 ```
