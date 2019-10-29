@@ -13,8 +13,14 @@
   gr = log --graph --date=short --decorate=short --pretty=format:'%Cgreen%h %Creset%cd %Cblue%cn %Cred%d %Creset%s'
   st = status
   difff = diff --word-diff
-  ps = push origin $(git rev-parse --abbrev-ref HEAD)
-  pu = pull origin $(git rev-parse --abbrev-ref HEAD)
+  ps = "!f () {\
+    branch_name=$(git rev-parse --abbrev-ref HEAD);\
+    git push origin ${branch_name};\
+    };f"
+  pu = "!f () {\
+    branch_name=$(git rev-parse --abbrev-ref HEAD);\
+    git pull origin ${branch_name};\
+    };f"
   pr-feature = "!f () {\
             branch_name=$1;\
             template_path=$(git rev-parse --show-toplevel)/PULL_REQUEST_TEMPLATE_FEATURE.md;\
