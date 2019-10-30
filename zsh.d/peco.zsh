@@ -89,5 +89,26 @@ function peco-session-manager() {
 }
 alias pssm='peco-session-manager'
 
+function peco-elasticache-redis() {
+    CLUSTER_ENDPOINT="$(
+        aws elasticache describe-cache-clusters --show-cache-node-info \
+            | jq -cr '.CacheClusters[]
+                        | select(.Engine == "redis")
+                        | "ClusterID: " + .CacheClusterId + " ( Endpoint: " + 
+                        ( [.CacheNodes[] |  .Endpoint.Address ]  
+                            | sort
+                            | join(", ")) + " )"' \
+            | peco \
+            | cut -d' ' -f5
+    )"
+    if [ -z "$CLUSTER_ENDPOINT" ]; then
+    echo "$(date +'%Y-%m-%d %H:%M:%S %z') [ERROR] Unable to fetch any cluster."
+    return
+    fi
+
+    redis-cli -h $CLUSTER_ENDPOINT
+}
+alias per='peco-elasticache-redis'
+
 zle -N peco-select-history
 bindkey '^r' peco-select-history
