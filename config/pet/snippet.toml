@@ -57,3 +57,8 @@
   description = "Show OpsWorks Stack name that includes specified word in customJson"
   command = "aws --profile gunosy --region us-east-1 opsworks describe-stacks | jq '.Stacks[] | select(.CustomJson != null) | select(.CustomJson | test(\"*\")) | .Name'"
   output = ""
+
+[[snippets]]
+  description = "Delete all branches in a project already merged into a default branch."
+  command = "git branch --merged | grep -v '*' | xargs -I % git branch -d %"
+  output = ""
