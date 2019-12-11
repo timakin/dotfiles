@@ -4,8 +4,8 @@ function agp() {
 }
 
 function peco-cd() {
-    local n="1"
-    if [ $# -eq "1" ]; then
+    local n="2"
+    if [ $# -eq "2" ]; then
       n=$1
     fi
     local dir="$( find . -maxdepth $n -type d | sed -e 's;\./;;' | peco )"

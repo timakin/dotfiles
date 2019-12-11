@@ -34,6 +34,11 @@
   output = ""  
 
 [[snippets]]
+  description = "[DEBUG] show allocated experiments to user"
+  command = "EXPERIMENT_HOST={experiment APIのhost}; USER_ID={検証したいUserのID}; curl -X GET $EXPERIMENT_HOST/v1/debug/users/$USER_ID/experiments/running | jq ."
+  output = ""
+
+[[snippets]]
   description = "Login 'gunosy' account by onelogin-aws-login"
   command = "onelogin-aws-login -d 32400 --config-name gunosy --username seiji.takahashi@gunosy.com --profile gunosy"
   output = ""
