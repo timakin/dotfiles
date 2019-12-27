@@ -67,3 +67,11 @@
   description = "Delete all branches in a project already merged into a default branch."
   command = "git branch --merged | grep -v '*' | xargs -I % git branch -d %"
   output = ""
+
+
+[[snippets]]
+  description = "Upload a biwako article to S3 bucket with biwako scripts"
+  command = "cd ~/src/github.com/gunosy/biwako_service_analysis; python scripts/tools/upload_article.py --feed {feed名} --program {子ディレクトリ名} --target-dir {index.htmlが置いてあるディレクトリ} --html-name {同じ日に複数記事をアップロードする場合は名前を指定する}"
+  output = ""
+
+  
