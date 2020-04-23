@@ -4,8 +4,8 @@ function agp() {
 }
 
 function peco-cd() {
-    local n="1"
-    if [ $# -eq "1" ]; then
+    local n="2"
+    if [ $# -eq "2" ]; then
       n=$1
     fi
     local dir="$( find . -maxdepth $n -type d | sed -e 's;\./;;' | peco )"
@@ -109,6 +109,20 @@ function peco-elasticache-redis() {
     redis-cli -h $CLUSTER_ENDPOINT
 }
 alias per='peco-elasticache-redis'
+
+# CloudWatch Logs
+function peco-cloudwatch-logs() {
+    LOG_GROUP_NAME="$(
+        aws logs describe-log-groups | jq .[][].logGroupName -r | peco
+    )"
+    if [ -z "$LOG_GROUP_NAME" ]; then
+    echo "$(date +'%Y-%m-%d %H:%M:%S %z') [ERROR] Unable to fetch any log-group."
+    return
+    fi
+
+    aws2 logs tail --since 1 --follow $LOG_GROUP_NAME
+}
+alias pclogs='peco-cloudwatch-logs'
 
 zle -N peco-select-history
 bindkey '^r' peco-select-history
