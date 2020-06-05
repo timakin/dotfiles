@@ -11,6 +11,12 @@ export PATH=$PATH:/usr/local/rvm/gems/ruby-2.3.0/bin
 export PATH=$PATH:$HOME/go_appengine
 export PATH=$PATH:/Users/seiji.takahashi/Library/Android/sdk/platform-tools
 export PATH=$PATH:$HOME/flutter/bin
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/Users/seiji.takahashi/Downloads/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/seiji.takahashi/Downloads/google-cloud-sdk/path.zsh.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/Users/seiji.takahashi/Downloads/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/seiji.takahashi/Downloads/google-cloud-sdk/completion.zsh.inc'; fi
 export PYENV_ROOT="$HOME/.pyenv"
 export PATH="$PYENV_ROOT/bin:$PATH"
 eval "$(pyenv init -)"
