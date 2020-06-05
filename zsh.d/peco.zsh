@@ -111,7 +111,7 @@ function peco-elasticache-redis() {
 alias per='peco-elasticache-redis'
 
 # CloudWatch Logs
-function peco-cloudwatch-logs() {
+function peco-cloudwatch-logs-tail() {
     LOG_GROUP_NAME="$(
         aws logs describe-log-groups | jq .[][].logGroupName -r | peco
     )"
@@ -120,9 +120,27 @@ function peco-cloudwatch-logs() {
     return
     fi
 
-    aws2 logs tail --since 1 --follow $LOG_GROUP_NAME
+    aws2 logs tail --since 5 --follow --filter ERROR $LOG_GROUP_NAME
 }
-alias pclogs='peco-cloudwatch-logs'
+alias pclogs='peco-cloudwatch-logs-tail'
+
+# Delete unused CloudWatch Logs
+function peco-delete-cloudwatch-log-stream() {
+    LOG_GROUP_NAME="$(
+        aws logs describe-log-groups | jq .[][].logGroupName -r | peco
+    )"
+    if [ -z "$LOG_GROUP_NAME" ]; then
+    echo "$(date +'%Y-%m-%d %H:%M:%S %z') [ERROR] Unable to fetch any log-group."
+    return
+    fi
+
+    NOW="$(
+        expr `date "+%s"` \* 1000
+    )"
+
+    aws logs describe-log-streams --log-group-name $LOG_GROUP_NAME --order-by LastEventTime --max-items 200 | jq .[]
+}
+alias pclog-delete='peco-delete-cloudwatch-log-stream'
 
 zle -N peco-select-history
 bindkey '^r' peco-select-history
