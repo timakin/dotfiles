@@ -1,6 +1,7 @@
 export MANPATH=/opt/local/man:$MANPATH
 export PATH="$HOME/.rbenv/bin:$PATH"
 export PATH=$PATH:/usr/local/bin/mysql
+export PATH=$PATH:/opt/homebrew/bin
 export PATH=$PATH:/usr/local/bin/protoc-gen-grpc-web
 export PATH=/opt/local/bin:/opt/local/sbin/:$PATH
 export PATH=~/.local/bin:$PATH
@@ -17,6 +18,3 @@ if [ -f '/Users/seiji.takahashi/Downloads/google-cloud-sdk/path.zsh.inc' ]; then
 
 # The next line enables shell command completion for gcloud.
 if [ -f '/Users/seiji.takahashi/Downloads/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/seiji.takahashi/Downloads/google-cloud-sdk/completion.zsh.inc'; fi
-export PYENV_ROOT="$HOME/.pyenv"
-export PATH="$PYENV_ROOT/bin:$PATH"
-eval "$(pyenv init -)"
