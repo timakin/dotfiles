@@ -161,12 +161,6 @@ rm -rf .config/pet
 cp -rf dotfiles/config/pet .config/pet
 ```
 
-- onelogin
-
-```
-ln -s ~/dotfiles/config/.aws-onelogin.config .aws-onelogin.config
-```
-
 - gtop
 
 ```

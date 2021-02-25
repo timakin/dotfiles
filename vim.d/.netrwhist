@@ -1,0 +1,7 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhistcnt =5
+let g:netrw_dirhist_5='/Users/takahashiseiji'
+let g:netrw_dirhist_4='/Users/takahashiseiji/.ssh'
+let g:netrw_dirhist_3='/Users/takahashiseiji'
+let g:netrw_dirhist_2='/Users/takahashiseiji/.config'
+let g:netrw_dirhist_1='/Users/takahashiseiji'

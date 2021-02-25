@@ -20,7 +20,7 @@ set wildmenu
 
 """"""""""""""""
 ""削除可能にする
-set backspace=indent,eol,start
+set backspace=2
 """"""""""""""""
 
 """"""""""""""""
