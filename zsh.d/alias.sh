@@ -8,6 +8,7 @@ alias cp='cp -i'                                             # Comfirm overwrite
 alias diff='diff --strip-trailing-cr'
 alias less='less -R'                                    # Color escape sequences will displayed
 alias cat='bat'
+alias gcloudtoken='gcloud auth print-identity-token | pbcopy'
 
 ### replace words under current directory
 function greplace() {
