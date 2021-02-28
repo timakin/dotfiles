@@ -1,7 +1,4 @@
-# その他エイリアス
-alias de='cd Desktop'
 alias ll='ls -l'
-alias vzsh='vim ~/.zshrc'
 alias ls='ls -G'                                             # Show [/*@], Enable color
 alias mv='mv -i'                                             # Comfirm overwrite
 alias cp='cp -i'                                             # Comfirm overwrite
