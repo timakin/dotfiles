@@ -20,7 +20,6 @@ source $ZSHHOME/editor.zsh
 source $ZSHHOME/eval.zsh
 source $ZSHHOME/gcloud.zsh
 source $ZSHHOME/git.zsh
-source $ZSHHOME/hub.zsh
 source $ZSHHOME/keyboard.zsh
 source $ZSHHOME/news.zsh
 source $ZSHHOME/path.zsh
