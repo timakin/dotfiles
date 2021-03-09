@@ -1,8 +1,3 @@
-# peco with ag
-function agp() {
-    ag $@ -l | P
-}
-
 function peco-cd() {
     local n="2"
     if [ $# -eq "2" ]; then
