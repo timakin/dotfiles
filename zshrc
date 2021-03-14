@@ -14,7 +14,6 @@ function profile() {
 ZSHHOME="${HOME}/dotfiles/zsh.d"
 
 source $ZSHHOME/alias.sh
-source $ZSHHOME/aws.zsh
 source $ZSHHOME/color.zsh
 source $ZSHHOME/editor.zsh
 source $ZSHHOME/eval.zsh
