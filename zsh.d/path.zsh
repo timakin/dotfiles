@@ -4,7 +4,6 @@ export PATH=$PATH:/usr/local/bin/mysql
 export PATH=$PATH:/opt/homebrew/bin
 export PATH=$PATH:/usr/local/bin/protoc-gen-grpc-web
 export PATH=/opt/local/bin:/opt/local/sbin/:$PATH
-export PATH=~/.local/bin:$PATH
 export GOPATH=$HOME/go
 export PATH=$PATH:$GOPATH/bin
 export PATH=$PATH:/bin:/usr/bin:/usr/local/bin
