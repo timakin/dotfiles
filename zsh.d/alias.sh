@@ -6,8 +6,10 @@ alias diff='diff --strip-trailing-cr'
 alias less='less -R'                                    # Color escape sequences will displayed
 alias cat='bat'
 alias gcloudtoken='gcloud auth print-identity-token | pbcopy'
+alias kas="open /System/Library/CoreServices/KeyboardSetupAssistant.app"
 
 ### replace words under current directory
 function greplace() {
     find . -name ${3:-*} | xargs sed -i "" "s/$1/$2/g"
 }
+# Open Keyboard Assistant from CLI
