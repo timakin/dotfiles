@@ -1,5 +1,4 @@
-ローカル環境構築で必要な事
-========================
+# ローカル環境構築で必要な事
 
 # Browser
 
@@ -11,8 +10,6 @@
 - 1password
 - karabiner
 - magnet
-- Station
-- Authy
 
 # Communication
 
@@ -26,6 +23,7 @@
 - Dropbox(railsgate)
 
 # Design
+
 - Abstract
 - Craft
 - InVision
@@ -124,7 +122,6 @@ brew install tig
   - neobundle
   - vim clipboard
 
-
 ```
 sudo port deactivate vim
 sudo port install vim +clipboard
@@ -144,7 +141,7 @@ go get github.com/mattn/gof
 
 - files(file listing)
 
-[fileめっちゃ早く一覧化する。-aオプションをつけて階層遡れる](https://github.com/mattn/files)
+[file めっちゃ早く一覧化する。-a オプションをつけて階層遡れる](https://github.com/mattn/files)
 
 ```
 go get github.com/mattn/files
