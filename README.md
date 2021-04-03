@@ -14,13 +14,7 @@
 # Communication
 
 - Slack
-- Line
 - iterm2
-- Discord
-
-# Cloud
-
-- Dropbox(railsgate)
 
 # Design
 
