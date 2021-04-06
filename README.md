@@ -25,12 +25,7 @@
 ## Editor
 
 - XCode
-- Atom
 - VSCode
-- Goland
-- WebStorm
-- Rubymine
-- DataGrip
 
 ## Development
 
