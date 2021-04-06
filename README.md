@@ -18,14 +18,7 @@
 
 # Design
 
-- Abstract
-- Craft
-- InVision
-- Sketch Plugins
-  - Sketch Runner
-  - Rename It
-  - Find And Replace
-- Zeplin
+- Figma
 
 # Programming
 
