@@ -30,19 +30,7 @@
 ## Development
 
 - iTerm2
-- Postman
 - Sequel Pro
-
-## Language
-
-- rbenv
-- ruby
-- rails
-- golang
-
-## Middleware
-
-- mysql
 
 ## CLI
 
