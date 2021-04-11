@@ -54,24 +54,6 @@ git config --global ghq.root ~/src
 npm install -g diff-so-fancy
 ```
 
-- gocode
-
-```
-go get -u github.com/nsf/gocode
-```
-
-- Nodejs(npm)
-
-```
-https://nodejs.org/en/
-```
-
-- godef
-
-```
-https://github.com/dgryski/vim-godef
-```
-
 - ssh key
 
 ```
