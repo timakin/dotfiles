@@ -85,12 +85,6 @@ cp -rf dotfiles/vim.d .vim/config
 ln -s dotfiles/vimrc .vimrc
 ```
 
-- gof(Fuzzy finder)
-
-```
-go get github.com/mattn/gof
-```
-
 - files(file listing)
 
 [file めっちゃ早く一覧化する。-a オプションをつけて階層遡れる](https://github.com/mattn/files)
