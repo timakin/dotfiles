@@ -96,12 +96,6 @@ rm -rf .config/pet
 cp -rf dotfiles/config/pet .config/pet
 ```
 
-- gtop
-
-```
-npm install gtop -g
-```
-
 - fd
 
 ```
