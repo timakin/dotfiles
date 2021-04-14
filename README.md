@@ -95,9 +95,3 @@ go get github.com/knqyf263/pet
 rm -rf .config/pet
 cp -rf dotfiles/config/pet .config/pet
 ```
-
-- bat
-
-```
-brew install bat
-```
