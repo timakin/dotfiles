@@ -60,12 +60,6 @@ npm install -g diff-so-fancy
 ssh-copy-id -i ~/.ssh/id_rsa.pub <user name>@<ip address>:
 ```
 
-- tig
-
-```
-brew install tig
-```
-
 - Zsh
   - ln -sfn $HOME/src/github.com/timakin/dotfiles/vim.d $HOME/.vim
   - oh-my-zsh
