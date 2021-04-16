@@ -48,12 +48,6 @@ go get github.com/motemen/ghq
 git config --global ghq.root ~/src
 ```
 
-- diff-so-fancy
-
-```
-npm install -g diff-so-fancy
-```
-
 - ssh key
 
 ```
