@@ -14,7 +14,6 @@
 # Communication
 
 - Slack
-- iterm2
 
 # Design
 
