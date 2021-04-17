@@ -6,7 +6,6 @@
 
 # Utility
 
-- Alfead
 - 1password
 - karabiner
 - magnet
