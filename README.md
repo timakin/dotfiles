@@ -1,17 +1,9 @@
 # ローカル環境構築で必要な事
 
-# Browser
-
 - Chrome
-
-# Utility
-
 - 1password
 - karabiner
 - magnet
-
-# Communication
-
 - Slack
 
 # Design
