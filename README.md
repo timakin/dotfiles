@@ -5,9 +5,6 @@
 - karabiner
 - magnet
 - Slack
-
-# Design
-
 - Figma
 
 # Programming
