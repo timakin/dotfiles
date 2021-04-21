@@ -6,3 +6,4 @@ export GOPATH=$HOME/go
 export PATH=$PATH:$GOPATH/bin
 export PATH=$PATH:/bin:/usr/bin:/usr/local/bin
 export PATH=$PATH:$HOME/google-cloud-sdk/bin
+export PATH=$PATH:$HOME/Library/Python/3.8/bin/pip
