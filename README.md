@@ -6,11 +6,6 @@
 - magnet
 - Slack
 - Figma
-
-# Programming
-
-## Editor
-
 - XCode
 - VSCode
 
