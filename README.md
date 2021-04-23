@@ -10,9 +10,6 @@
 - VSCode
 - iTerm2
 - Sequel Ace
-
-## CLI
-
 - homebrew
 - git
 - peco
