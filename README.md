@@ -8,11 +8,8 @@
 - Figma
 - XCode
 - VSCode
-
-## Development
-
 - iTerm2
-- Sequel Pro
+- Sequel Ace
 
 ## CLI
 
