@@ -53,6 +53,7 @@ ln -s dotfiles/vimrc .vimrc
 
 ```
 go get github.com/knqyf263/pet
+brew install fzf
 ```
 
 ```
