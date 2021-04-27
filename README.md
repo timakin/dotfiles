@@ -13,7 +13,6 @@
 - homebrew
 - git
 - peco
-- ghq
 
 ```
 rm .gitconfig; cp dotfiles/gitconfig .gitconfig
