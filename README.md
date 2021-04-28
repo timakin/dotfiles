@@ -9,7 +9,6 @@
 - XCode
 - VSCode
 - iTerm2
-- Sequel Ace
 - homebrew
 - git
 - peco
