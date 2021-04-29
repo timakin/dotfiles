@@ -10,7 +10,6 @@
 - VSCode
 - iTerm2
 - homebrew
-- git
 - peco
 
 ```
