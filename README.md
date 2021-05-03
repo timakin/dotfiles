@@ -21,12 +21,6 @@ go get github.com/motemen/ghq
 git config --global ghq.root ~/src
 ```
 
-- ssh key
-
-```
-ssh-copy-id -i ~/.ssh/id_rsa.pub <user name>@<ip address>:
-```
-
 - Zsh
   - ln -sfn $HOME/src/github.com/timakin/dotfiles/vim.d $HOME/.vim
   - oh-my-zsh
