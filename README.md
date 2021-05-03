@@ -10,7 +10,6 @@
 - VSCode
 - iTerm2
 - homebrew
-- peco
 
 ```
 rm .gitconfig; cp dotfiles/gitconfig .gitconfig
