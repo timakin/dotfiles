@@ -30,9 +30,6 @@ git config --global ghq.root ~/src
 ```
 sudo port deactivate vim
 sudo port install vim +clipboard
-```
-
-```
 rm -rf .vim/config
 cp -rf dotfiles/vim.d .vim/config
 ln -s dotfiles/vimrc .vimrc
