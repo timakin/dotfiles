@@ -6,7 +6,6 @@
 - magnet
 - Slack
 - Figma
-- XCode
 - VSCode
 - iTerm2
 - homebrew
