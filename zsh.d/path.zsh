@@ -8,3 +8,6 @@ export PATH=$PATH:/bin:/usr/bin:/usr/local/bin
 export PATH=$PATH:$HOME/google-cloud-sdk/bin
 export PATH=$PATH:$HOME/Library/Python/3.8/bin
 export PATH=$PATH:/opt/homebrew/opt/curl/bin
+export PYENV_ROOT="$HOME/.pyenv"
+export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init -)"
