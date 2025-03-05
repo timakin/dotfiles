@@ -1,3 +1,5 @@
+# Add deno completions to search path
+if [[ ":$FPATH:" != *":/Users/takahashiseiji/completions:"* ]]; then export FPATH="/Users/takahashiseiji/completions:$FPATH"; fi
 function profile() {
   START_TIME=$(~/bin/unixnano)
   source $1
