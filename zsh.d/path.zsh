@@ -11,6 +11,8 @@ export PATH=$PATH:/opt/homebrew/opt/curl/bin
 export TUNNELTO_INSTALL="/Users/takahashiseiji/.tunnelto"
 export PATH=$PATH:$TUNNELTO_INSTALL/bin
 export PATH=$PATH:/Users/takahashiseiji/.deno/bin
+export PATH=$PATH:/Users/takahashiseiji/.local/bin/uv
+export PATH=$PATH:/Users/takahashiseiji/.local/bin/uvx
 export PYENV_ROOT="$HOME/.pyenv"
 export PATH="$PYENV_ROOT/bin:$PATH"
 eval "$(pyenv init -)"
